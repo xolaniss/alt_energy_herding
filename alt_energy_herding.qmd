@@ -1,0 +1,417 @@
+---
+format:
+  pdf:
+    tbl-cap-location: top
+    dpi: 500
+    fig-pos: "H"
+    number-sections: true
+    cite-method: natbib
+    include-in-header: 
+      - text: |
+          \usepackage{lscape}
+          \newcommand{\blandscape}{\begin{landscape}}
+          \newcommand{\elandscape}{\end{landscape}}
+          \usepackage{rotating}
+          \newcommand{\bsideways}{\begin{sidewaystable}[htbp]}
+          \newcommand{\esideways}{\end{sidewaystable}}
+      - file: preamble.tex 
+    include-before-body: title.tex
+    keep-tex: TRUE
+  docx:
+    reference-doc: new_template_no_numbering.docx
+pdf-engine: lualatex
+# monofont: "DejaVu Sans Mono"
+# mainfont: "Times New Roman"
+execute: 
+  echo: false
+  warning: false
+editor: source
+bibliography: references.bib
+biblio-style: apalike
+natbiboptions: round
+link-citations: true
+linkcolor: blue!100!black
+urlcolor: blue!100!black
+citecolor: blue!100!black
+linestretch: 1.5
+indent: TRUE
+title-block-banner: false
+title-block-style: none
+---
+
+
+```{r setup}
+#| include=FALSE
+options(scipen=999)
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE, 
+                      dpi = 500, 
+                      fig.pos = "H", 
+                      fig.env= 'figure', 
+                      tab.topcaption = TRUE,
+                      ft.align = "left",
+                      ft.arraystretch = 0.5
+                      )
+library(tidyverse)
+library(readr)
+library(readxl)
+library(zoo)
+library(magick)
+library(stringi)
+library(patchwork)
+library(xtable)
+library(scales)
+library(rvest)
+library(rebus)
+library(PNWColors)
+library(lubridate)
+library(here)
+library(flextable)
+library(gt)
+library(officer)
+library(officedown)
+library(modelsummary)
+library(sandwich)
+library(lmtest)
+
+set_flextable_defaults(
+  font.size = 7,
+  digits = 2,
+  font.family = "Arial",
+  border.color = "black",
+  border.width = 0.5,
+  fp_border = fp_border(color = "black", width = 0.5, style = "solid")
+)
+
+
+```
+
+```{r functions}
+source(here("Functions","flextable_word.R" ))
+source(here("Functions","modelsummary_word.R" ))
+source(here("Functions","modelplot_word.R" ))
+source(here("Functions","borderlines.R" ))
+```
+
+# Introduction
+
+Argument: Investment interest on green ETFs has been explosive mainly by climate risks faced by the global economy and the actions of policy makers, goverments and organizations towards a sustainable future.
+
+Derived from @decclesia2024: Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs.
+The clean energy transition represents one of the largest multi-decade secular growth opportunities.
+
+From @naqvi2022: After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products; all have escalated enormousl
+
+# Literature review
+
+# Data and methodology
+
+## Data
+
+The sample consists of alternative energy equity ETFs (green ETFs) that are traded in the US markets. The number of available alternative energy ETFs in our sample varied from 10 in the beginning of analysis to 30 at the most. The period of analysis runs from May 1st of 2016 through 19th June of 2024. The starting date was selected on the basis of the COP Paris agreement.
+Daily logarithmic returns were computed from the closing prices of ETFs for a total of 2122 observations. 
+
+\newpage
+
+```{r}
+#| label: data
+#| tbl-cap: "List of used alternative energy equity ETFs"
+#| cache: false
+
+tribble(
+  ~"ETF", ~"Source",
+  "ALPS CLEAN ENERGY ETF", "",
+  "BLUE HORIZON BNE ETF", " ",
+  "SPDR S&P KENSHO CLEAN POWER ETF", " ",
+  "GLOBAL X CLEANTECH ETF", " ",
+  "PROSHARES S&P KENSHO CLEANTECH ETF", " ",
+  "INVESCO MSCI SUSTAINABLE FUTURE ETF", " ",
+  "FIRST TRUST GLOBAL WIND ENERGY ETF", " ",
+  "FIDELITY CLEAN ENERGY ETF", " ",
+  "GLDS.BLOOMBERG CN. EN. EQ.ETF", " ",
+  "FST.NQ.CN.EDGE SMRT.GRID INFRA IDX ETF", " ",
+  "DEFIANCE NEXT GEN H2 ETF", " ",
+  "DIREXION HYDROGEN ETF", " ",
+  "GLOBAL X HYDROGEN ETF", " ",
+  "ISHARES GLOBAL CLEAN EN. ETF", " ",
+  "BLACKR.WLD.EXUS CRBN TSTN.READINESS", " ",
+  "NUB.CBN.TSTN.& INFRA", " ",
+  "TCW TRANSFORM SYSTEMS ETF", " ",
+  "VANECK URANIUM AND NUCLEAR ENERGY", " ",
+  "NUVEEN GLOBAL NET ZERO TRANSITION ETF", " ",
+  "SPDR MSCI USA CIM. PA. ALIGNED ETF", " ", 
+  "INVESCO GLOBAL CLEAN ENERGY ETF", " ", 
+  "FST.NQ.CN.EDGE GREY.ETF", " ",
+  "GLOBAL X SOLAR ETF", " ", 
+  "GLOBAL X RENEWABLE ENERGY PRODUCERS", " ",
+  "TRUESHARES EAG.GLB. RENWEN.ETF", " ",
+  "VANECK LOW CARBON ENERGY ETF", " ",
+  "SMARTETFS SUST.EN. II ETF", " ",
+  "INVESCO SOLAR ETF", " ", 
+  "VIRTUS DUFF & PHELPS CLEAN ENERGY ETF", " ",
+  "GLOBAL X WIND ENERGY ETF", " "
+) %>% 
+  flextable_pdf() %>% 
+  align(align = "left", j = 1,  part = "all") %>%
+  autofit(add_w = 1.5)
+
+```
+
+
+Results of baseline and rolling window analysis points to significant herding for the whole period and in various instances.
+
+
+
+## Methodology
+
+Following the relevant literature we calculate the Cross Sectional Absolute Deviation  (CSAD) measure for each day in the following manner. We compute the difference of the ith ETF and market return where market return is proxied by the cross sectional average of returns for sample of our ETFs available for each day using equation (1):
+
+$$
+CSAD_t = \dfrac{1}{N}\sum_{i=1}^{N} |R_{i,t} - R_{m,t}|
+$$ {#eq-csad}
+
+
+
+
+The behavior of the CSAD measure for US Alternative Energy ETFs is presented in Figue 1.
+
+```{r}
+#| label: cross_sectional_deviation
+#| fig.cap: "Cross Sectional Absolute Deviation (CSAD) for US Alternative Energy ETFs"
+#| fig.height: 4
+#| fig.width: 6
+#| cache: false
+
+```
+
+At a later stage we estimate a non-linear regression as in @galariotis2015.
+
+$$
+CSAD_t = \gamma_0 + \gamma_1 R_{m,t} + \gamma_2 R_{m,t}^2 + \epsilon_t
+$$ {#eq-herding}
+
+
+
+The testing procedure of herding relies on the above Equation (2). Rational asset pricing models predict a linear relationship between return dispersion and market returns under normal conditions, a relationship that is no longer valid in the presence of herding. Herding behavior leads to an increasing or decreasing cross sectional dispersion with respect to market returns. In other words, herding is captured by a non-linear term in the standard pricing equation indicating a decreasing or an increasing returns’ dispersion. 
+
+
+# Results
+
+## General herding behaviour
+
+Stated differently, as @chang2000 argue, in the case of herding the coefficient on the non-linear term (γ2) will be negative and statistically significant.
+Table 2 presens the results of herding for the full sample employing the non-linear equation (2). The estimated coefficient on market return is positive and highly significant as expected.The estimated coefficient on the non-linear term is negative (-1.2773) and statistically significant with a t-statistic of -9.71 suggesting that herd behavior is present and robust in the US alternative energy ETFs.
+
+```{r}
+#| label: herding
+#| tbl-cap: "Estimation results of herding in the U.S. equity alternative energy ETFs"
+#| cache: false
+#| ft.arraystretch: 0.9
+
+estimates <- c(
+  "\\gamma_0",
+  "\\gamma_1 ",
+  "\\gamma_2"
+)
+
+
+tribble(
+  ~ "gamma_0", ~ "gamma_1", ~ "gamma_2",
+  "0.0038**", "0.2883***", " -1.2773***",
+  "(47.09)", "(33.333)", "(-9.71)"
+) %>% 
+  flextable_pdf() %>% 
+  mk_par(i = 1, part = "header", value = as_paragraph(as_equation(estimates))) %>% 
+  autofit(add_w = 0.8)
+
+
+```
+
+There is ample evidence in the relevant literature that herding behavior in various asset markets [see @pochea2017] exhibits asymmetry and time-varying characteristics. To this end, we proceed to estimate Equation (2) using the quantile regression (QR) proposed by @koenker1978 and Table 3 presents the results of estimating Equation (2) across various quantiles of the returns dispersion. Our focus is on the herding coefficient γ2, as a significant negative value of γ2 is indicative of herding. Such a finding is observed at two quantiles namely 25% and 50% with a value of -1.1056 and -1.165 which are highly significant. It is worth mentioning that the sign of the herding coefficient remains negative for almost all quantiles while the significance changes from significant to insifnificant while we move from low and middle to upper quantiles (75 and 90%).
+
+
+```{r}
+#| label: quantile_herding
+#| tbl-cap: "Estimation results of herding across various quantiles"
+#| cache: false
+
+headings <- c(
+  "\\gamma_0",
+  "\\gamma_1 ",
+  "\\gamma_2"
+)
+
+quantiles <- c(
+  "\\tau = 10\\%",
+  "\\tau = 25\\%",
+  "\\tau = 50\\%",
+  "\\tau = 75\\%",
+  "\\tau = 90\\%"
+)
+
+tribble(
+  ~ "Quantile", ~ "gamma_0", ~ "gamma_1", ~ "gamma_2",
+  "10%", "0.0016***", "0.2536***", " -1.3736",
+  "25%", "0.0026***", "0.2461***", " -1.1056***",
+  "50%", "0.0037***", "0.2648***", " -1.165***",
+  "75%", "0.0048***", "0.3011***", " -1.1473***",
+  "90%", "0.0064***", "0.2999***", " 0.2314"
+) %>% 
+  flextable_pdf() %>% 
+  mk_par(i = 1, j = c(2, 3, 4), part = "header", value = as_paragraph(as_equation(headings))) %>% 
+  mk_par(j = 1, part = "body", value = as_paragraph(as_equation(quantiles))) %>%
+  autofit(add_w = 0.2)
+
+
+
+
+
+```
+
+## Herding behaviour during extreme market periods
+
+It is widely accepted that asset returns are characterized by asymmetry, that is, return dispersion tend to behave differently in rising and falling markets [see @geert2000; @zhou2013; @longin2001]. Based on the above and in order to provide additional insight on the herding phenomenon we examine whether herding presents an asymmetric response on days when the market is up vis-à-vis days when the market is down. To this end, we augment Eq. 2 as follows:
+
+$$
+CSAD_t = \gamma_0 + \gamma_1(1-D) R_{m,t} + \gamma_2D R_{m,t} + \gamma_3(1-D) R_{m,t}  + \gamma_4D R_{m,t}^2 \epsilon_t
+$$
+where D is a dummy variable that takes the value of 1 when the market return is negative and 0 otherwise.
+
+Therefore, our exploration of asymmetric behavior of herding phenomenon is carried through the inspection of the statistical significance and the sign of the two estimated coefficients γ3 vs γ4 (up vs down markets). It should be noted, that examining the relationship between returns dispersion and market-wide returns across various quantiles of the returns distribution allows us to make more robust inference regarding the true behavior of the phenomenon.
+
+Table 4 reports the estimation results of herding in the up and down markets
+based on Eq. 3. In general, we find that herding is more likely to occur in down markets than in up markets, which is indicative of the asymmetry of herding behavior.
+
+```{r}
+#| label: asymmetry_herding
+#| tbl-cap: "Estimation results of herding in up and down markets"
+#| cache: false
+
+
+headings <- c(
+  "\\gamma_0",
+  "\\gamma_1 ",
+  "\\gamma_2",
+  "\\gamma_3",
+  "\\gamma_4"
+)
+
+quantiles <- c(
+  "\\tau = 10\\%",
+  "\\tau = 25\\%",
+  "\\tau = 50\\%",
+  "\\tau = 75\\%",
+  "\\tau = 90\\%"
+)
+
+tribble(
+  ~ "Quantile", ~ "gamma_0", ~ "gamma_1", ~ "gamma_2", ~ "gamma_3", ~ "gamma_4",
+  "10%", "0.0016***", "0.2532***", " -1.3669***", " -0.2522***", " -1.1522",
+  "25%", "0.0026***", "0.2475***", " -1.2383**", " -0.2477***", " -1.1171***",
+  "50%", "0.0038***", "0.2247***", " 0.3838", " -0.2634***", " -1.3144***",
+  "75%", "0.0050***", "0.2500***", " 1.3135", " -0.2785***", " -0.9721***",
+  "90%", "0.0065***", "0.2788***", " 1.0169", " -0.2942***", " -1.2003***"
+) %>% 
+  flextable_pdf() %>% 
+  mk_par(i = 1, j = c(2, 3, 4, 5, 6), part = "header", value = as_paragraph(as_equation(headings))) %>% 
+  mk_par(j = 1, part = "body", value = as_paragraph(as_equation(quantiles))) %>%
+  autofit(add_w = -0.2)
+
+```
+
+
+Herding is present at low quantiles when markets are rising with an estimated coefficient γ3 of -1.3669 and -1.2383 and highly significant respectively. However, when markets are declining, investors seem to neglect their own information set and imitate the actions of others resulting in a highly significant coefficient of herding ( γ4) across four out of five quantiles. Furthermore, we find that in high quantiles (75% & 90%) and when markets are rising the coefficient of interest ( γ3) turns positive but insignificant.
+
+
+## Rolling window analysis
+
+There is ample evidence that herding might be time dependent [see @babalos2015; @klein2013; @stavroyiannis2019]. In order to gain further insight on the time varying nature of herding we conducted a rolling window analysis. The size of the rolling window is related to the timescales of the system (response times), and the aim of the research [@babalos2015]. There is no golden rule for the right size of the rolling window, there is a trade-off between having a long enough window to estimate the metrics, and short enough to have a sufficient number of windows in order to be able to derive a trend. In light of the above discussion we set off to conduct a rolling window analysis of 50 observations.
+Figure 2 plots the time evolution of the value of the estimated significance of the herding coefficient  (γ2) using the rolling window analysis.
+
+
+We observe several periods of herding behavior as reflected in the troughs in Figure 2. The most prominent cases of herding occur between March and May of 2020 followed by several instances of herding in the period that extends from March through April of 2017 and the period of February-March of 2023. On the other side, we derive significant moments of anti-herding behavior in the clean energy ETFs by observing the spikes in Figure 2. Cross sectional dispersion appears to increase with respect to market-wide returns which is a sign of anti-herding behavior on behalf of investors around December of 2016 and later during September of 2022.
+
+```{r}
+#| label: rolling_window
+#| fig.cap: "Estimated significance of herding coefficient in a rolling window analysis"
+#| cache: false
+
+```
+
+
+## Probit analysis
+
+The behavior of participants in energy markets is closely related to the developments in the field of climate risks, carbon emmissions  and environmentally friendly policies. There are a few studies that attempt to quantify the effects of unceretainty related to climate on the economy and financial markets (see inter alia….). @bua2024 developed two climate risk related indexes namely transition and physical risk using a text-based approach in order to study the effect of these risks in financial markets.  It is expected that investors would prefer to hold assets that perform well in the face of increasing climate change risks, even if this entails accepting lower returns for such climate-hedging assets. Therefore, in the context of our study and following previous studies that study the determinants of herding behavior [see @bouri2019; @demirer2018], we attempt to study the effect of climate-related uncertainty on the formation of herding behavior in the clean energy market. Given this, we define a dummy variable, which takes a value of 1 during periods of statistically significant herding (i.e., for days when the rolling t-statistic on γ2 < −1.96) and zero otherwise, and then, we use a Probit model to relate this dummy to the two climate risk indexes developed by @bua2024. It should be noted that due to availability issues the probit analysis ends in December of 2023. The results from the Probit model are reported in Table 2, where only the physical risk index significantly decreases the probability of herding. In other words, climate risks is good news for clean energy stocks or firms resulting in anti herding behavior.
+
+This implies that in the presence of higher physical risk with respect to the climate, clean energy ETFs become a more attractive investment option for investors that allocate their money to the various alternative energy investment products. As a result, the cross sectional dispersion of clean energy ETFs tends to increase. 
+
+
+```{r}
+#| label: probit_analysis
+#| tbl-cap: "Estimation results of the probit model"
+#| cache: false
+
+tribble(
+  ~ "Variable", ~ "Coefficient",
+  "Transition Risk", "-4.607***",
+  "Physical Risk", "-1.318", 
+  "Constant", " -1.506***",
+  "LogL", "-484.7",
+  "Observations with Dependent Variable (Dep) = 0", "1816",
+  "Observations with Dependent Variable (Dep) = 1", "134"
+) %>% 
+  flextable_pdf() %>% 
+  align(align = "left", j = 1, part = "all") %>%
+  autofit(add_w = 1.5)
+
+```
+
+Furthermore, suppose we get the median values of these two series. then we define values above median as high and below median as low.
+
+We define a dummy =1 if values>median and 0 otherwise and in this way we will have PRI values that are bigger than median and 0 otherwise. We also define a dummy which is lower than median, i.e., 1 and 0 otherwise, then we use these high PRI and high TRI in one probit regression and low TRI and low PRI in another. Results are presented in the following table.
+
+We observe higher uncertainty that stems from physical or transition risk causes antiherding which is in line with the logic we discussed earlier.
+
+\newpage
+```{r}
+#| label: probit_analysis2
+#| tbl-cap: "Estimation results of the probit model with high and low climate risk indexes (above or below median)"
+#| cache: false
+
+tribble(
+  ~" ", ~ "High", ~ "Low",
+  "Physical Risk", "-6.736*", "-6.118",
+  "Transition Risk", "-1.798", "-2.581",
+) %>% 
+  flextable_pdf() %>% 
+  align(align = "left", j = 1, part = "all") %>%
+  autofit(add_w = 1.5)
+
+```
+
+
+# Conclusion
+
+This study offers novel and valuable insights on herding behavior in clean energy ETFs.
+
+\newpage 
+# References {.unnumbered}
+::: {#refs}
+:::
+
+
+<!-- \setcounter{section}{0} -->
+<!-- \renewcommand{\thesection}{\Alph{section}} -->
+
+<!-- \setcounter{table}{0} -->
+<!-- \renewcommand{\thetable}{A\arabic{table}} -->
+
+<!-- \setcounter{figure}{0} -->
+<!-- \renewcommand{\thefigure}{A\arabic{figure}} -->
+
+<!-- \newpage -->
+
+<!-- # Appendix -->
+
+<!-- ## Data -->
