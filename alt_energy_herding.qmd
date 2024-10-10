@@ -51,7 +51,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       fig.env= 'figure', 
                       tab.topcaption = TRUE,
                       ft.align = "left",
-                      ft.arraystretch = 0.5
+                      ft.arraystretch = 0.7
                       )
 library(tidyverse)
 library(readr)
@@ -186,7 +186,7 @@ Stated differently, as @chang2000 argue, in the case of herding the coefficient 
 ```{r}
 #| label: tbl-herding
 #| tbl-cap: "Estimation results of herding in the U.S. equity alternative energy ETFs"
-#| cache: false
+#| cache: true
 #| ft.arraystretch: 0.9
 
 estimates <- c(
@@ -203,6 +203,10 @@ tribble(
 ) %>% 
   flextable_pdf() %>% 
   mk_par(i = 1, part = "header", value = as_paragraph(as_equation(estimates))) %>% 
+    add_footer_lines(values = as_paragraph(
+    "Note: *,**,*** denotes significance at 10%,5% and 1% respectively."
+  )) %>% 
+  hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   autofit(add_w = 0.8)
 
 
@@ -241,9 +245,9 @@ tribble(
   flextable_pdf() %>% 
   mk_par(i = 1, j = c(2, 3, 4), part = "header", value = as_paragraph(as_equation(headings))) %>% 
   mk_par(j = 1, part = "body", value = as_paragraph(as_equation(quantiles))) %>%
-  add_footer_lines(values = as_paragraph(
-    "This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation (2) in various quantiles 10, 25, 50, 75 and 90% of the returns distribution. *,**,*** denotes significance at 10%,5% and 1% respectively."
-  )) %>% 
+  add_footer_row(values = as_paragraph("Note: This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation 2 in various quantiles 10, 25, 50, 75 and 90% of the returns distribution.", " ", "*,**,*** denotes significance at 10%,5% and 1% respectively."
+  ), colwidths = 4) %>% 
+  hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   autofit(add_w = 0.2)
 
 
@@ -293,11 +297,12 @@ tribble(
   flextable_pdf() %>% 
   mk_par(i = 1, j = c(2, 3, 4, 5, 6), part = "header", value = as_paragraph(as_equation(headings))) %>% 
   mk_par(j = 1, part = "body", value = as_paragraph(as_equation(quantiles))) %>%
-  add_footer_lines(
-    values = as_paragraph(
-     "This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation (3). *,**,***denotes significance at 10%,5% and 1% respectively."
-    )
+  add_footer_row(
+    values = as_paragraph("Note: This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation (3). *,**,***denotes significance at 10%,5% and 1% respectively."
+    ),
+    colwidths = 6
   ) %>%
+   hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   autofit(add_w = -0.2)
 
 ```
@@ -314,7 +319,7 @@ There is ample evidence that herding might be time dependent [see @babalos2015; 
 ```{r}
 #| label: fig-rolling_window
 #| fig.cap: "Rolling window herding estimates"
-#| cache: false
+#| cache: true
 #| fig.width: 8
 #| fig.height: 6
 
@@ -378,6 +383,7 @@ The behaviour of participants in energy markets is closely related to the develo
 
 This implies that in the presence of higher physical risk with respect to the climate, clean energy ETFs become a more attractive investment option for investors that allocate their money to the various alternative energy investment products. As a result, the cross sectional dispersion of clean energy ETFs tends to increase. 
 
+\newpage
 
 ```{r}
 #| label: tbl-probit_analysis
@@ -400,6 +406,7 @@ tribble(
       "Notes: **,*** denotes statistically significant at 5% and 1%"
     )
   ) %>% 
+  hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   autofit(add_w = 1.5)
 
 ```
@@ -424,6 +431,7 @@ tribble(
       "Notes: *, denotes statistically significant at 10%"
     )
   ) %>%
+  hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   autofit(add_w = 1.4)
 
 ```
