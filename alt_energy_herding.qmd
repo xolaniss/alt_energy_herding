@@ -97,10 +97,11 @@ source(here("Functions","fx_plot.R" ))
 
 # Introduction
 
+Climate sustainability has become a major concern for financial markets and investors. This growing interest is primary driven by the increasing materialisation of climate risks, and the actions of governments, institutions and organizations towards a sustainable future [@giglio2021a]. In order to ensure returns investors increasingly seek to herd against climate risks by investing in green financial products. Although the evidence is mixed, indications that returns from green financial products are comparable to traditional financial [see amongst other, @decclesia2024; @nguyen2025; @pastor2022; and @naqvi2022]. Therefore, the growth of green assets-under-management is likely to continue.
 
-Investment interest on green ETFs has been explosive mainly by climate risks faced by the global economy and the actions of policy makers, governments and organizations towards a sustainable future.  Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products; all have escalated enormously [@naqvi2022].
+A key feature of the green financial products is the exchange traded funds (ETFs). ETFs are a type of security that involves a collection of securities—such as stocks—that often tracks an underlying index, although they can invest in any number of industry sectors or use various strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in companies that are environmentally friendly [@briere2023]. Thus, ESG ETFs exhibit environment friendly characteristics.
 
-# Literature review
+Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products; all have escalated enormously [@naqvi2022].
 
 # Data and methodology
 
