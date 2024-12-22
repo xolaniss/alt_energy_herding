@@ -99,7 +99,7 @@ source(here("Functions","fx_plot.R" ))
 
 Climate sustainability has become a major concern for financial markets and investors. This growing interest is primary driven by the increasing materialisation of climate risks, and the actions of governments, institutions and organizations towards a sustainable future [@giglio2021a]. In order to ensure returns investors increasingly seek to herd against climate risks by investing in green financial products. Although the evidence is mixed, indications that returns from green financial products are comparable to traditional financial [see amongst other, @decclesia2024; @nguyen2025; @pastor2022; and @naqvi2022]. Therefore, the growth of green assets-under-management is likely to continue.
 
-A key feature of the green financial products is the exchange traded funds (ETFs). ETFs are a type of security that involves a collection of securities—such as stocks—that often tracks an underlying index, although they can invest in any number of industry sectors or use various strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in companies that are environmentally friendly [@briere2023]. Thus, ESG ETFs exhibit environment friendly characteristics.
+A key feature of the green financial products is the exchange traded funds (ETFs). ETFs are a type of security that involves a collection of securities that often tracks an underlying index, although they can invest in any number of industry sectors or use various strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in companies that are environmentally friendly [@briere2023]. Thus, ESG ETFs exhibit environment friendly characteristics.
 
 Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products; all have escalated enormously [@naqvi2022].
 
@@ -338,7 +338,7 @@ We observe several periods of herding behaviour as reflected in the troughs in @
 
 ## Climate-related uncertainty and herding behaviour
 
-The behaviour of participants in energy markets is closely related to the developments in the field of climate risks, carbon emissions  and environmentally friendly policies. There are a few studies that attempt to quantify the effects of uncertainty related to climate on the economy and financial markets \textcolor{red}{(see inter alia….)}. @bua2024 developed two climate risk related indexes namely transition and physical risk using a text-based approach in order to study the effect of these risks in financial markets.  It is expected that investors would prefer to hold assets that perform well in the face of increasing climate change risks, even if this entails accepting lower returns for such climate-hedging assets. Therefore, in the context of our study and following previous studies that study the determinants of herding behaviour [see @bouri2019; @demirer2018], we attempt to study the effect of climate-related uncertainty on the formation of herding behavior in the clean energy market. 
+The behaviour of participants in energy markets is closely related to the developments in the field of climate risks, carbon emissions  and environmentally friendly policies. There are a few studies that attempt to quantify the effects of uncertainty related to climate on the economy and financial markets. @bua2024 developed two climate risk related indexes namely transition and physical risk using a text-based approach in order to study the effect of these risks in financial markets.  It is expected that investors would prefer to hold assets that perform well in the face of increasing climate change risks, even if this entails accepting lower returns for such climate-hedging assets. Therefore, in the context of our study and following previous studies that study the determinants of herding behaviour [see @bouri2019; @demirer2018], we attempt to study the effect of climate-related uncertainty on the formation of herding behavior in the clean energy market. 
 
 We use a probit model to relate herding to the two climate risk indexes developed by @bua2024 in the following manner:
 
@@ -437,6 +437,10 @@ We use these high PRI and high TRI in one probit regression and low TRI and low 
 This study offers novel and valuable insights on herding behavior in clean energy ETFs.
 
 Results of baseline and rolling window analysis points to significant herding for the whole period and in various instances.
+
+@choi2023
+@kuang2021
+
 \newpage 
 
 # References {.unnumbered}
