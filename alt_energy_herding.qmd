@@ -103,6 +103,8 @@ A key feature of the green financial products is the exchange traded funds (ETFs
 
 Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products; all have escalated enormously [@naqvi2022].
 
+
+
 # Data and methodology
 
 ## Data
