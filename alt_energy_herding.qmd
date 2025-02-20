@@ -26,7 +26,7 @@ execute:
   echo: false
   warning: false
 editor: source
-bibliography: references.bib
+bibliography: energy_herding.bib
 biblio-style: apalike
 natbiboptions: round
 link-citations: true
@@ -39,6 +39,7 @@ title-block-banner: false
 title-block-style: none
 render-on-save: true
 ---
+
 
 
 ```{r setup}
@@ -94,7 +95,9 @@ source(here("Functions","modelsummary_word.R" ))
 source(here("Functions","modelplot_word.R" ))
 source(here("Functions","borderlines.R" ))
 source(here("Functions","fx_plot.R" ))
+
 ```
+
 
 # Introduction and literature review
 
@@ -104,7 +107,7 @@ In this new climate sustainability paradigm, investors face many pressures that 
 
 Specifically, climate change presents risks to investor portfolios through two primary sources - physical and transition risks. Physical risks or direct impact refer to extreme climate events such as floods and droughts, which impact business operations and infrastructure; and transition risks are the policy, technological, and other costs that societies bear to achieve low carbon economies [@nguyen2025; and @giglio2021a amongst others]. Investors, therefore, recognise these risks and seek to mitigate them, as they seek return-enhancing green financial products.    
 
-Exchange-traded funds (ETFs) are a key feature of green financial products. ETFs are a type of security that involves a collection of securities that often tracks an underlying index. However, they can invest in various industry sectors or strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in environmentally friendly companies [@briere2023]. Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products have escalated enormously [@naqvi2022]. That is, the growth of green assets under management is likely to continue.
+Exchange-traded funds (ETFs) are a key feature of green financial products. ETFs are a type of security that involves a collection of securities that often tracks an underlying index. However, they can invest in various industry sectors or strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in environmentally friendly companies [@briere2023]. Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products have escalated enormously [@naqvi2022]. That is, the growth of green assets under management is likely to continue. Lastly, the limited availability of data on ESG complying investment tools [@avramov2022; @nguyen2025] justifies the use of green (CE) ETFs as best candidates of green assets.
 
 However, given how recent the inclusion of climate sustainability in investment decisions is, it is not clear what the actual impact will be in the long run. In this study specifically, we ask whether the rapid adoption of CE ETFs could be driven by market fads, or is a fundamental change in investor behaviour. Investors, for example, can believe that peers have information about climate risks that they do not, investors may herd to avoid losses compared to peers, or investors may be encouraged to herd by the desire to align to climate-related social values [@ciciretti2021; @gavrilakis2023; @loang2023]. Therefore, market volatility and crisis, financial performance, and investor sentiment can drive herding in ESG markets.
 
@@ -112,7 +115,9 @@ Herding behaviour in ESG markets is not without precedent. Amongst others, @loan
 
 However, to the best of our knowledge, no studies exist that focus on herding behaviour in CE ESGs. This study, therefore, aims to extend the broader literature on herding behaviour in commodity and energy markets. Several studies in this area were conducted. For example, @demirer2013a conducted a commodity sectoral study and found herding behaviour in grains but not in other sectors. Similarly, @gilbert2010 showed herding behaviour amongst speculators in non-ferrous commodities. Others did not find evidence of herding in similar markets. @babalos2015 found significant anti-herding behaviour in metal commodities futures after the global financial crisis. @pierdzioch2010 showed that forecasters in oil and metals markets deviated from the crowd, indicating a rational response to market information. @steen2013 also found no herding behaviour in international commodity markets. Overall, the literature in this area is mixed, which indicates scope for further study.
 
-Therefore,  this study investigates herding behaviour in alternative energy ETFs in the US between 2019 and 2024. We then demonstrate how climate-related uncertainty can drive herding behaviour in these markets. Methodologically, we follow the standard herding tests by @christie1995 and @chang2000. The traditional approach was supplemented by quantile regressions [@koenker1978 ] in order to capture the time-varying aspects of herding. Lastly,  we extend recent approaches by @bua2024 and others, which seek to establish a link between climate uncertainty and herding behaviour. The next section describes the data and methodology, followed by the results and conclusions.
+In addition, our study extends the results of @dragomirescu-gaina2021 who examined herding behavior of investors in the US energy sector and herding sensitivity to various proxies of policy uncertainty and financial risk. They employed the energy equities included in the S&P 500 and concluded that herding among investors in the US energy market sector is sensitive to green volatility shocks
+
+Therefore,  this study investigates herding behaviour in alternative energy ETFs in the US between 2016 and 2024. We then demonstrate how climate-related uncertainty can drive herding behaviour in these markets. Methodologically, we follow the standard herding tests by @christie1995 and @chang2000. The traditional approach was supplemented by quantile regressions [@koenker1978 ] in order to capture the time-varying aspects of herding. Lastly,  we extend recent approaches by @bua2024 and others, which seek to establish a link between climate uncertainty and herding behaviour. The next section describes the data and methodology, followed by the results and conclusions.
 
 
 # Data and methodology
@@ -176,7 +181,7 @@ tribble(
   ~ "gamma_0", ~ "gamma_1", ~ "gamma_2",
   "0.0038**", "0.2883***", " -1.2773***",
   "(47.09)", "(33.333)", "(-9.71)"
-) %>% 
+) %>%
   flextable_pdf() %>% 
   mk_par(i = 1, part = "header", value = as_paragraph(as_equation(estimates))) %>% 
     add_footer_lines(values = as_paragraph(
@@ -446,7 +451,7 @@ We use these high PRI and high TRI in one probit regression and low TRI and low 
 
 # Conclusion
 
-This study offers novel and valuable insights into herding behaviour in clean energy ETFs. We used various herding behaviour tests to achieve this. First, the baseline herding tests revealed significant evidence of herding behaviour. Second, the asymmetric herding tests showed that herding behaviour was present in both bear and bull markets. Lastly, the results of the time-varying tests point to significant periodic herding. However, the results further indicate that herding in US clean energy ETFs was not mainly related to climate-related risks or uncertainty. The probit analysis showed that climate-related uncertainty reduced the probability of herding or led to investor anti-herding behaviour. We defer to the literature on the factors that drive herding in these ETFs [for example, @loang2023;  @koutmos2024; @przychodzen2016]. Our results, similar to @bua2024, indicate that investors did not herd on climate-related uncertainty, and sought returns whilst hedging against climate-related risk. This is a positive for the financial stability of these growing alternative investment indices. 
+This study offers novel and valuable insights into herding behaviour in clean energy ETFs. We used various herding behaviour tests to achieve this. First, the baseline herding tests revealed significant evidence of herding behaviour. Second, the asymmetric herding tests showed that herding behaviour was present in both bear and bull markets. Lastly, the results of the time-varying tests point to significant periodic herding. However, the results further indicate that herding in US clean energy ETFs was not mainly related to climate-related risks or uncertainty. The probit analysis showed that climate-related uncertainty reduced the probability of herding or led to investor anti-herding behaviour. We differ to the literature on the factors that drive herding in these ETFs [for example, @loang2023;  @koutmos2024; @przychodzen2016]. Our results, similar to @bua2024, indicate that investors did not herd on climate-related uncertainty, and sought returns whilst hedging against climate-related risk. This is a positive for the financial stability of these growing alternative investment indices. 
 
 
 \newpage 

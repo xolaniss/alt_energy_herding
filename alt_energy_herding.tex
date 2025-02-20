@@ -34,14 +34,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -163,6 +177,7 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -179,6 +194,7 @@
   citecolor={blue!100!black},
   urlcolor={blue!100!black},
   pdfcreator={LaTeX via pandoc}}
+
 
 \author{}
 \date{}
@@ -214,6 +230,7 @@ thereby reducing the probability of herding-driven system risk.
 \\
 \textbf{JEL Codes}: G14, Q54, P18
 \newpage
+
 
 \setstretch{1.5}
 \section{Introduction and literature
@@ -268,6 +285,9 @@ of Green energy financing in the list of United Nations Sustainability
 Goals (SDGs) as SDG 7, the role, importance, and visibility of green
 financial products have escalated enormously \citep{naqvi2022}. That is,
 the growth of green assets under management is likely to continue.
+Lastly, the limited availability of data on ESG complying investment
+tools \citep{avramov2022, nguyen2025} justifies the use of green (CE)
+ETFs as best candidates of green assets.
 
 However, given how recent the inclusion of climate sustainability in
 investment decisions is, it is not clear what the actual impact will be
@@ -307,12 +327,20 @@ market information. \citet{steen2013} also found no herding behaviour in
 international commodity markets. Overall, the literature in this area is
 mixed, which indicates scope for further study.
 
+In addition, our study extends the results of
+\citet{dragomirescu-gaina2021} who examined herding behavior of
+investors in the US energy sector and herding sensitivity to various
+proxies of policy uncertainty and financial risk. They employed the
+energy equities included in the S\&P 500 and concluded that herding
+among investors in the US energy market sector is sensitive to green
+volatility shocks
+
 Therefore, this study investigates herding behaviour in alternative
-energy ETFs in the US between 2019 and 2024. We then demonstrate how
+energy ETFs in the US between 2016 and 2024. We then demonstrate how
 climate-related uncertainty can drive herding behaviour in these
 markets. Methodologically, we follow the standard herding tests by
 \citet{christie1995} and \citet{chang2000}. The traditional approach was
-supplemented by quantile regressions \citep[ ]{koenker1978} in order to
+supplemented by quantile regressions \citep{koenker1978} in order to
 capture the time-varying aspects of herding. Lastly, we extend recent
 approaches by \citet{bua2024} and others, which seek to establish a link
 between climate uncertainty and herding behaviour. The next section
@@ -930,7 +958,7 @@ However, the results further indicate that herding in US clean energy
 ETFs was not mainly related to climate-related risks or uncertainty. The
 probit analysis showed that climate-related uncertainty reduced the
 probability of herding or led to investor anti-herding behaviour. We
-defer to the literature on the factors that drive herding in these ETFs
+differ to the literature on the factors that drive herding in these ETFs
 \citep[for example,][]{loang2023, koutmos2024, przychodzen2016}. Our
 results, similar to \citet{bua2024}, indicate that investors did not
 herd on climate-related uncertainty, and sought returns whilst hedging
@@ -943,7 +971,7 @@ stability of these growing alternative investment indices.
 \addcontentsline{toc}{section}{References}
 
 \renewcommand{\bibsection}{}
-\bibliography{references.bib}
+\bibliography{energy_herding.bib}
 
 \setcounter{section}{0}
 \renewcommand{\thesection}{\Alph{section}}
@@ -1202,6 +1230,7 @@ US Alternative Energy ETFs}
 \global\setlength{\tabcolsep}{\Oldtabcolsep}
 
 \renewcommand*{\arraystretch}{1}
+
 
 
 
