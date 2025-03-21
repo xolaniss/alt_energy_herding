@@ -301,6 +301,21 @@ values \citep{ciciretti2021, gavrilakis2023, loang2023}. Therefore,
 market volatility and crisis, financial performance, and investor
 sentiment can drive herding in ESG markets.
 
+It is well established that herding literature is vast with
+contradictory results depending mainly on the market, the employed
+methodology and the period under consideration \citep{spyrou2013}.
+Herding behavior can be either spurious in cases when investors make
+similar decisions as a result of processing the same information set and
+intentional herding when investors imitate the actions of others
+\citep[see inter alia,][]{bikhchandani2000, galariotis2015}. Empirical
+studies on herding usually fall into two categories: namely those that
+employ holdings data aiming at measuring institutional investor herding
+\citep{lakonishok1992}, and studies that use market returns data and
+investigate herding towards the market consensus
+\citep{chang2000, galariotis2015}. Our paper falls within the latter
+category and tests for herding towards the market consensus for clean
+energy US ETFs.
+
 Herding behaviour in ESG markets is not without precedent. Amongst
 others, \citet{loang2023} found that compliance with SDG goals can
 introduce bias in investor sentiment, which leads to herding behaviour.
@@ -343,9 +358,10 @@ markets. Methodologically, we follow the standard herding tests by
 supplemented by quantile regressions \citep{koenker1978} in order to
 capture the time-varying aspects of herding. Lastly, we extend recent
 approaches by \citet{bua2024} and others, which seek to establish a link
-between climate uncertainty and herding behaviour. The next section
-describes the data and methodology, followed by the results and
-conclusions.
+between climate uncertainty and herding behaviour.
+
+The next section describes the data and methodology, followed by the
+results and conclusions.
 
 \section{Data and methodology}\label{data-and-methodology}
 
@@ -363,6 +379,81 @@ Change Conference (COP) Paris agreement. Daily logarithmic returns were
 computed from the closing prices of ETFs for a total of 2122
 observations.
 
+\begin{figure}[H]
+
+\centering{
+
+\includegraphics{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}
+
+}
+
+\caption{\label{fig-csad}Cross Sectional Absolute Deviation (CSAD) for
+US Alternative Energy ETFs}
+
+\end{figure}%
+
+The development of the CSAD measure over time for the clean energy ETFs
+is presented in Figure~\ref{fig-csad}. In general, the CSAD measure
+remains within certain bounds. However, we observe several cases when
+the CSAD measure deviates significantly from the market consensus:
+around the announcement of the Paris agreement (2016-2017), the covid-19
+pandemic crisis (2020--2021), the war outbreak in Ukraine (2022) among
+others. Table~\ref{tbl-desc} presents the descriptive statistics of the
+data.
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{0.7}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[l]{|p{1.46in}|p{1.08in}|p{1.08in}|p{1.23in}|p{1.14in}}
+
+\caption{\label{tbl-desc}Descriptive statistics of the data}
+
+\tabularnewline
+
+\ascline{1pt}{000000}{1-5}
+
+\multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\raggedright}m{\dimexpr 1.46in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{\ }}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Mean}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{St.dev}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.23in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Skewness}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.14in+0\tabcolsep}!{\color[HTML]{FFFFFF}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Kurtosis}}}} \\
+
+\ascline{1pt}{000000}{1-5}\endfirsthead 
+
+\ascline{1pt}{000000}{1-5}
+
+\multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\raggedright}m{\dimexpr 1.46in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{\ }}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Mean}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{St.dev}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.23in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Skewness}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.14in+0\tabcolsep}!{\color[HTML]{FFFFFF}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Kurtosis}}}} \\
+
+\ascline{1pt}{000000}{1-5}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\raggedright}m{\dimexpr 1.46in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{CSAD}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{0.0062}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{0.0034}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.23in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{1.5598}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.14in+0\tabcolsep}!{\color[HTML]{FFFFFF}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{7.9355}}}} \\
+
+\ascline{1pt}{FFFFFF}{1-5}
+
+
+
+\multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\raggedright}m{\dimexpr 1.46in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Absolute\ CSAD}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{0.0094}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.08in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{0.0107}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.23in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{3.3175}}}} & \multicolumn{1}{!{\color[HTML]{FFFFFF}\vrule width 1pt}>{\centering}m{\dimexpr 1.14in+0\tabcolsep}!{\color[HTML]{FFFFFF}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{23.8725}}}} \\
+
+\ascline{1pt}{000000}{1-5}
+
+
+\end{longtable}
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
 \subsection{Methodology}\label{methodology}
 
 Following the relevant literature
@@ -379,9 +470,8 @@ where \(R_{i,t}\) is the return and \(R_{m,t}\) is the cross sectional
 average of returns for the sample of ETFs available for each day. The
 return dispersion measures the directional similarity of ETF returns to
 the market return. This return similarity forms the basis for the
-herding behaviour tests. The CSAD measure for US Alternative Energy ETFs
-is presented in Figure~\ref{fig-csad}. Following \citet{galariotis2015}
-we estimate Equation~\ref{eq-herding}:
+herding behaviour tests. Following \citet{galariotis2015} we estimate
+Equation~\ref{eq-herding}:
 
 \begin{equation}\phantomsection\label{eq-herding}{
 CSAD_t = \gamma_0 + \gamma_1 R_{m,t} + \gamma_2 R_{m,t}^2 + \epsilon_t,
@@ -602,6 +692,8 @@ based on Equation~\ref{eq-asymmetry}. In general, we find that herding
 is more likely to occur in down markets than in up markets, which is
 indicative of the asymmetry of herding behaviour.
 
+\newpage
+
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
 \global\setlength{\Oldtabcolsep}{\tabcolsep}
@@ -689,22 +781,22 @@ others resulting in a highly significant coefficient of herding
 that in high quantiles (75\% and 90\%) and when markets are rising the
 coefficient of interest (\(\gamma_3\)) turns positive but insignificant.
 
-\subsection{Herding behaviour
-over-time}\label{herding-behaviour-over-time}
+\subsection{Time-varying herding
+behaviour}\label{time-varying-herding-behaviour}
 
-There is ample evidence that herding might be time dependent
-\citep[see][]{babalos2015, klein2013, stavroyiannis2019}. In order to
-gain further insight on the time varying nature of herding we conducted
-a rolling window analysis. The size of the rolling window is related to
-the time-scales of the system (response times), and the aim of the
-research \citep{babalos2015}. There is no golden rule for the right size
-of the rolling window, there is a trade-off between having a long enough
-window to estimate the metrics, and short enough to have a sufficient
-number of windows in order to be able to derive a trend. In light of the
-above discussion we set off to conduct a rolling window analysis of 50
-observations. Figure~\ref{fig-rolling_window} plots the time evolution
-of the value of the estimated significance of the herding coefficient
-(\(\gamma_2\)) using the rolling window analysis.
+There is ample evidence that herding might vary in response to market
+conditions \citep[see][]{babalos2015, klein2013, stavroyiannis2019}. In
+order to gain further insight on the time varying nature of herding we
+conducted a rolling window analysis. The size of the rolling window is
+related to the time-scales of the system (response times), and the aim
+of the research \citep{babalos2015}. There is no golden rule for the
+right size of the rolling window, there is a trade-off between having a
+long enough window to estimate the metrics, and short enough to have a
+sufficient number of windows in order to be able to derive a trend. In
+light of the above discussion we set off to conduct a rolling window
+analysis of 50 observations. Figure~\ref{fig-rolling_window} plots the
+time evolution of the value of the estimated significance of the herding
+coefficient (\(\gamma_2\)) using the rolling window analysis.
 
 \begin{figure}[H]
 
@@ -735,19 +827,22 @@ behaviour}\label{climate-related-uncertainty-and-herding-behaviour}
 
 The behaviour of participants in energy markets is closely related to
 the developments in the field of climate risks, carbon emissions and
-environmentally friendly policies. There are a few studies that attempt
-to quantify the effects of uncertainty related to climate on the economy
-and financial markets. \citet{bua2024} developed two climate risk
-related indexes namely transition and physical risk using a text-based
-approach in order to study the effect of these risks in financial
-markets. It is expected that investors would prefer to hold assets that
-perform well in the face of increasing climate change risks, even if
-this entails accepting lower returns for such climate-hedging assets.
-Therefore, in the context of our study and following previous studies
-that study the determinants of herding behaviour
-\citep[see][]{bouri2019, demirer2018}, we attempt to study the effect of
-climate-related uncertainty on the formation of herding behavior in the
-clean energy market.
+environmentally friendly policies. In particular, following the
+implementation of the Paris agreement in November 2016, climate policy
+uncertainty has become in the epicenter of interest across carbon and
+energy markets. There are a few studies that attempt to quantify the
+effects of uncertainty related to climate on the economy and financial
+markets \citep[see inter alia,][]{gabriel2024, bolton2021, krueger2020}.
+To this end, \citet{bua2024} developed two climate risk related indexes
+namely transition and physical risk using a text-based approach in order
+to study the effect of these risks in financial markets. It is expected
+that investors would prefer to hold assets that perform well in the face
+of increasing climate change risks, even if this entails accepting lower
+returns for such climate-hedging assets. Therefore, in the context of
+our study and following previous studies that study the determinants of
+herding behaviour \citep[see][]{bouri2019, demirer2018}, we attempt to
+study the effect of climate-related uncertainty on the formation of
+herding behavior in the clean energy market.
 
 We use a probit model to relate herding to the two climate risk indexes
 developed by \citet{bua2024} in the following manner:
@@ -771,8 +866,11 @@ clean energy stocks or firms resulting in anti-herding behaviour. This
 implies that in the presence of higher physical risk with respect to the
 climate, clean energy ETFs become a more attractive investment option
 for investors that allocate their money to the various alternative
-energy investment products. As a result, the cross sectional dispersion
-of clean energy ETFs tends to increase.
+energy investment products. As a result, the cross-sectional dispersion
+of clean energy ETFs tends to increase. Our results are in line with
+those of rrelevant studies such as Gabriel \& Pinho (2024) who claimed
+that in the event of climate policy shocks, clean energy assets could
+serve the role of hedging instruments.
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -985,22 +1083,6 @@ stability of these growing alternative investment indices.
 \newpage
 
 \section{Appendix}\label{appendix}
-
-\subsection{Cross-sectional average
-deviations}\label{cross-sectional-average-deviations}
-
-\begin{figure}[H]
-
-\centering{
-
-\includegraphics{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}
-
-}
-
-\caption{\label{fig-csad}Cross Sectional Absolute Deviation (CSAD) for
-US Alternative Energy ETFs}
-
-\end{figure}%
 
 \subsection{ETFs used in the study}\label{etfs-used-in-the-study}
 
@@ -1216,7 +1298,7 @@ US Alternative Energy ETFs}
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 5.39in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Note:\ Details\ on\ this\ funds\ can\ be\ found\ on\ Yahoo\ Finance.}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 5.39in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Arial}{Note:\ Details\ on\ these\ funds\ can\ be\ found\ on\ Yahoo\ Finance.}}}} \\
 
 
 
