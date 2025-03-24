@@ -421,7 +421,6 @@ where $D^{herd}$ takes a value of 1 during periods of statistically significant 
 
 The results from the Probit model are reported in @tbl-probit_analysis, where only the physical risk index significantly decreases the probability of herding.^[It should be noted that due to availability issues the probit analysis ends in December of 2023.] In other words, climate risks is good news for clean energy stocks or firms resulting in anti-herding behaviour. This implies that in the presence of higher physical risk with respect to the climate, clean energy ETFs become a more attractive investment option for investors that allocate their money to the various alternative energy investment products. As a result, the cross-sectional dispersion of clean energy ETFs tends to increase. Our results are in line with those of relevant studies such as @gabriel2024 who claimed that in the event of climate policy shocks, clean energy assets could serve the role of hedging instruments.
 
-
 ```{r}
 #| label: tbl-probit_analysis
 #| tbl-cap: "Estimation results of the probit model"
@@ -453,7 +452,7 @@ tribble(
   ) %>% 
   hline(part = "body", i = 3, border = fp_border(color = "black", style = "solid", width = 1)) %>% 
   hline_bottom(part = "footer", border = fp_border(color = "black", style = "solid", width = 1)) %>% 
-  autofit(add_w = 1.5)
+  autofit(add_w = 1.4)
 
 ```
 
@@ -469,8 +468,6 @@ Pr(D^{herd} = 1 |\lambda_0 +\lambda_1D^{TRI}_{low}TRI + \lambda_2D^{PRI}_{low}PR
 $$ {#eq-climate_low}
 
 where $D^{herd}$ is the same as in @eq-climate. $D^{TRI}_{high}$ and $D^{PRI}_{high}$ are dummy variables that take a value of 1 if the value of the TRI and PRI are above the median and zero otherwise. Similarly, $D^{TRI}_{low}$ and $D^{PRI}_{low}$ are dummy variables that take a value of 1 if the value of the TRI and PRI are below the median and zero otherwise. 
-
-\newpage
 
 ```{r}
 #| label: tbl-probit_analysis2
