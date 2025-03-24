@@ -164,7 +164,7 @@ The development of the CSAD measure over time for the clean energy ETFs is prese
 tribble(
   ~ " ", ~ "Mean", ~ "St.dev", ~ "Skewness", ~ "Kurtosis",
   "CSAD",  "0.0062", "0.0034", "1.5598", "7.9355",
-  "Absolute CSAD",  "0.0094", "0.0107", "3.3175", "23.8725"
+  "Absolute CSAR",  "0.0094", "0.0107", "3.3175", "23.8725"
 ) |> 
   flextable_pdf() |> 
   align(align = "left", j = 1, part = "all") |>
@@ -191,7 +191,7 @@ where $R_{i,t}$ is the return and $R_{m,t}$ is the cross sectional average of re
 
 
 $$
-CSAD_t = \gamma_0 + \gamma_1 R_{m,t} + \gamma_2 R_{m,t}^2 + \epsilon_t,
+CSAD_t = \gamma_0 + \gamma_1 |R_{m,t}| + \gamma_2 R_{m,t}^2 + \epsilon_t,
 $$ {#eq-herding}
 
 
