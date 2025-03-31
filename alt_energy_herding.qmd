@@ -26,7 +26,7 @@ execute:
   echo: false
   warning: false
 editor: source
-bibliography: energy_herding.bib
+bibliography: references.bib
 biblio-style: apalike
 natbiboptions: round
 link-citations: true
@@ -99,27 +99,20 @@ source(here("Functions","fx_plot.R" ))
 ```
 
 
-# Introduction and literature review
+# Introduction 
 
-Climate sustainability is a major concern for financial markets and investors. The growing interest in climate sustainability is primarily driven by the increasing materialisation of climate risks, and the actions of governments, institutions and organizations towards a sustainable future [@giglio2021a]. To ensure returns, investors increasingly seek to hedge against climate risks by investing in green financial products. Although the evidence is mixed, indications that returns from green financial products are comparable to traditional financial [see amongst others, @decclesia2024; @nguyen2025; @pastor2022; and @naqvi2022]. 
+Climate sustainability is a major concern for financial markets and investors. The growing interest in climate sustainability is primarily driven by the increasing materialisation of climate risks, and the actions of governments, institutions and organizations towards a sustainable future [@giglio2021a]. To safeguard returns, investors increasingly seek to hedge against climate risks by investing in green financial products. Although the evidence from the existing literature is mixed, returns from green financial products are somewhat comparable to traditional financial products [see amongst others, @decclesia2024; @nguyen2025; @pastor2022; and @naqvi2022]. In this new climate sustainability paradigm, investors face many pressures that not only bear on returns but also the stability of financial markets. For example, resulting regulations aimed at reducing emissions can surprisingly reduce the profitability of fossil-fuel-based companies, or the possible mispricing of assets from ignoring climate risks can lead to significant losses [@nguyen2025]. In addition to climate risks, a general change in investor attitudes can drive the inclusion of green assets in their portfolio can lead to systemic risk.^[These pressures notwithstanding the possible contribution that financial markets can play in mitigating and reducing the negative effects of climate change [@giglio2021a]] Specifically, climate change presents risks to the global financial system, and ultimately to investment portfolios, through two primary sources - physical and transition risks. Physical risks or direct impact refer to extreme climate events such as floods and droughts, which impact business operations and infrastructure; and transition risks are the policy, technological, and other costs that societies bear to achieve low carbon economies [@nguyen2025; and @giglio2021a amongst others]. Investors, therefore, recognise these risks and seek to mitigate them, as they seek return-enhancing green financial products.    
 
-In this new climate sustainability paradigm, investors face many pressures that not only bear on returns but also the stability of financial markets. For example, resulting regulations aimed at reducing emissions can surprisingly reduce the profitability of fossil-fuel-based companies, or the possible mispricing of assets from ignoring climate risks can lead to significant losses [@nguyen2025]. In addition to these climate risks, a general change in investor attitudes can drive the inclusion of green assets in their portfolio can lead to systemic risk.^[These pressures notwithstanding the possible contribution that financial markets can play in mitigating and reducing the negative effects of climate change [@giglio2021a]]
+Exchange-traded funds (ETFs) are a key feature of green financial products. They are a collection of investments that often tracks an underlying performance of an asset or index. In the universe of environment, social, and governance (ESG) investments, clean ETFs serve as a tool for environmentally conscious investors to identify and invest in environmentally friendly companies [@briere2023] engaged in the transition towards a cleaner production and a low-carbon economy. Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing one in 2022 [@decclesia2024]. This is not surprising given that the clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products have escalated enormously [@naqvi2022]. That is, the growth of green assets under management is likely to continue. Furthermore, the limited availability of data on ESG complying investment tools [@avramov2022; @nguyen2025] justifies the use of energy ETFs as best candidates of green assets. However, given that the inclusion of climate sustainability in investment decisions is a recent phenomenon, it is not clear what the actual impact will be in the long-run.
 
-Specifically, climate change presents risks to investor portfolios through two primary sources - physical and transition risks. Physical risks or direct impact refer to extreme climate events such as floods and droughts, which impact business operations and infrastructure; and transition risks are the policy, technological, and other costs that societies bear to achieve low carbon economies [@nguyen2025; and @giglio2021a amongst others]. Investors, therefore, recognise these risks and seek to mitigate them, as they seek return-enhancing green financial products.    
+This study investigates herding behaviour in alternative (clean) energy ETFs in the US between May 1 2016 and June 19 2024, showing evidence of significant herding that is asymmetric and time-varying. We then study whether climate-related uncertainty can affect the herding behaviour in the US clean energy ETFs market. Methodologically, we follow the standard herding tests by @christie1995 and @chang2000. Notably, we supplement the traditional approach with quantile regressions [@koenker1978 ] in order to capture how herding differs across various quantiles of the returns dispersion and in up and down markets. Lastly, to establish a link between climate risk and herding behaviour, we differentiating between transitional and physical risks [@bua2024] and provide valuable insights on their potential impact on the likelihood of herding in clean energy ETFs. 
 
-Exchange-traded funds (ETFs) are a key feature of green financial products. ETFs are a type of security that involves a collection of securities that often tracks an underlying index. However, they can invest in various industry sectors or strategies. In addition, environment, social, and governance (ESG) ETFs serve as a market discovery tool for investors to identify and invest in environmentally friendly companies [@briere2023]. Among the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing ones in 2022, followed by the Cybersecurity and Artificial Intelligence (AI) ETFs [@decclesia2024]. The clean energy transition represents one of the largest multi-decade secular growth opportunities.  After the inclusion of Green energy financing in the list of United Nations Sustainability Goals (SDGs) as SDG 7, the role, importance, and visibility of green financial products have escalated enormously [@naqvi2022]. That is, the growth of green assets under management is likely to continue. Lastly, the limited availability of data on ESG complying investment tools [@avramov2022; @nguyen2025] justifies the use of green (CE) ETFs as best candidates of green assets.
+In this study specifically, we ask whether the rapid adoption of clean energy ETFs could be driven by market fads, or is a fundamental change in investor behaviour. Investors, for example, can believe that their peers have more valuable information about climate risks, making them to herd to avoid losses compared to peers; alternatively, investors may be encouraged to herd by the desire to align to climate-related social values [@ciciretti2021; @gavrilakis2023; @loang2023]. Investors in clean energy stocks can experience large losses if their betting on clean energy stocks go wrong, which represents a major concern in their decision-making process. This incites those investors to disregard their own information and follow the market consensus, leading to significant herding behaviour in the clean energy market. @devenow1996 indicate that following the market consensus induces some kind of security among less informed traders. This could be relevant to our analysis because ETFs represent a popular investment instrument for individual and retail investors who are not necessarily well informed about the risk and prospects of investments in clean energy firms and whether their contribution to the world transition to cleaner production should be financially lucrative. On a related front, the self-reinforcing nature of confidence in the tyranny of the majority, as indicated by @teraji2003 could also be pertinent.
 
-However, given how recent the inclusion of climate sustainability in investment decisions is, it is not clear what the actual impact will be in the long run. In this study specifically, we ask whether the rapid adoption of CE ETFs could be driven by market fads, or is a fundamental change in investor behaviour. Investors, for example, can believe that peers have information about climate risks that they do not, investors may herd to avoid losses compared to peers, or investors may be encouraged to herd by the desire to align to climate-related social values [@ciciretti2021; @gavrilakis2023; @loang2023]. Therefore, market volatility and crisis, financial performance, and investor sentiment can drive herding in ESG markets.
+While herding behaviour has been examined in ESG markets, it remains understudied in clean energy assets, notably, clean energy ETFs.^[Amongst others, @loang2023 shows that compliance with SDG goals can introduce bias in investor sentiment, which leads to herding behaviour. Using a Twitter (or X) uncertainty index, @koutmos2024 finds evidence of herding in US-based ESG index fund investors. @przychodzen2016 found indicate evidence of herding behaviour amongst fund managers who incorporated ESG strategies in their portfolios. Lastly, @rubbaniy2021 highlight evidence of herding in the MSCI US ESG Leader Index during extreme (bear and bull periods) periods.] Other studies on herding have been conducted in commodity and fossil energy markets. For example, @demirer2013 conducted a commodity sectoral study and found herding behaviour in grains but not in other sectors. Similarly, @gilbert2010 shows herding behaviour amongst speculators in non-ferrous commodities. Others did not find evidence of herding in similar markets. @babalos2015 find significant anti-herding behaviour in metal commodities futures after the global financial crisis. @pierdzioch2010 show that forecasters in oil and metals markets deviated from the crowd, indicating a rational response to market information. @steen2013 find no herding behaviour in international commodity markets. Notably,  our study extends the results of @dragomirescu-gaina2021 who have examined herding behavior of investors in the US energy sector and herding sensitivity to various proxies of policy uncertainty and financial risk. They study the energy equities included in the S&P 500 and concluded that herding among investors in the US energy market sector is sensitive to green volatility shocks
 
-It is well established that herding literature is vast with contradictory results depending mainly on the market, the employed methodology and the period under consideration [@spyrou2013]. Herding behavior can be either spurious in cases when investors make similar decisions as a result of processing the same information set and intentional herding when investors imitate the actions of others [see inter alia, @bikhchandani2000; @galariotis2015]. Empirical studies on herding usually fall into two categories: namely those that employ holdings data aiming at measuring institutional investor herding [@lakonishok1992], and studies that use market returns data and investigate herding towards the market consensus [@chang2000; @galariotis2015]. Our paper falls within the latter category and tests for herding towards the market consensus for clean energy US ETFs.
-
-Herding behaviour in ESG markets is not without precedent. Amongst others, @loang2023 found that compliance with SDG goals can introduce bias in investor sentiment, which leads to herding behaviour. Using a Twitter (or X) uncertainty index, @koutmos2024 found evidence of herding in US-based ESG index fund investors. @przychodzen2016 found herding behaviour amongst fund managers who incorporated ESG strategies in their portfolios. Lastly, @rubbaniy2021 highlight evidence of herding in the MSCI US ESG Leader Index during extreme periods (bear and bull periods).
-
-However, to the best of our knowledge, no studies exist that focus on herding behaviour in CE ESGs. This study, therefore, aims to extend the broader literature on herding behaviour in commodity and energy markets. Several studies in this area were conducted. For example, @demirer2013a conducted a commodity sectoral study and found herding behaviour in grains but not in other sectors. Similarly, @gilbert2010 showed herding behaviour amongst speculators in non-ferrous commodities. Others did not find evidence of herding in similar markets. @babalos2015 found significant anti-herding behaviour in metal commodities futures after the global financial crisis. @pierdzioch2010 showed that forecasters in oil and metals markets deviated from the crowd, indicating a rational response to market information. @steen2013 also found no herding behaviour in international commodity markets. Overall, the literature in this area is mixed, which indicates scope for further study.
-
-In addition, our study extends the results of @dragomirescu-gaina2021 who examined herding behavior of investors in the US energy sector and herding sensitivity to various proxies of policy uncertainty and financial risk. They employed the energy equities included in the S&P 500 and concluded that herding among investors in the US energy market sector is sensitive to green volatility shocks
-
-Therefore,  this study investigates herding behaviour in alternative energy ETFs in the US between 2016 and 2024. We then demonstrate how climate-related uncertainty can drive herding behaviour in these markets. Methodologically, we follow the standard herding tests by @christie1995 and @chang2000. The traditional approach was supplemented by quantile regressions [@koenker1978 ] in order to capture the time-varying aspects of herding. Lastly,  we extend recent approaches by @bua2024 and others, which seek to establish a link between climate uncertainty and herding behaviour. 
+Our analysis shows that herding is significant and is present in both down and up markets, with a stronger effect in the down market, suggesting an asymmetry. Herding is also found to be time-varying. Notably, an additional analysis reveals that the transition climate risk, particularly its high level, reduces the probability of herding in clean energy ETFs, whereas physical climate risk does not exert any significant impact on the probability of herding
+ 
 
 The next section describes the data and methodology, followed by the results and conclusions.
 
@@ -128,8 +121,7 @@ The next section describes the data and methodology, followed by the results and
 
 ## Data
 
-The sample consists of alternative energy equity ETFs (green ETFs) that are traded in the US markets (see @tbl-data in the Appendix).^[The data were sourced from \url{https://datastream.org/en-ca/}] The number of available alternative energy ETFs in our sample varied from 10 in the beginning of analysis to 30 at the most. The period of analysis runs from May 1^st^ of 2016 through 19^th^ June of 2024. The starting date was selected on the basis of the UN Climate Change Conference (COP) Paris agreement.
-Daily logarithmic returns were computed from the closing prices of ETFs for a total of 2122 observations. 
+The sample consists of clean energy equity ETFs (green ETFs) that are traded in the US markets (see @tbl-data in the Appendix).^[The data were sourced from \url{https://datastream.org/en-ca/}] The number of available clean energy ETFs in our sample varied from 10 in the beginning of analysis to 30 at the most. The period of analysis runs from May 1 2016 to 19 June 2024. Daily closing prices on the clean energy ETFs under study were collected from the Refinitiv database. The starting date was selected on the basis of the UN Climate Change Conference (COP) Paris agreement. Daily logarithmic returns were computed from the closing prices of each ETF, yielding, a total of 2122 observations per ETF. 
 
 ```{r}
 #| label: fig-csad
@@ -137,6 +129,8 @@ Daily logarithmic returns were computed from the closing prices of ETFs for a to
 #| fig.cap: "Cross Sectional Absolute Deviation (CSAD) for US Alternative Energy ETFs"
 #| fig.height: 3
 #| fig.width: 8
+#| include: true
+#| eval: true
 
 read_excel(here("Data", "data_for_xolani.xlsx"), sheet = 1) %>% 
   rename(Date = date,
@@ -160,6 +154,8 @@ The development of the CSAD measure over time for the clean energy ETFs is prese
 #| label: tbl-desc
 #| tbl-cap: "Descriptive statistics of the data"
 #| cache: false
+#| include: true
+#| eval: true
 
 tribble(
   ~ " ", ~ "Mean", ~ "St.dev", ~ "Skewness", ~ "Kurtosis",
@@ -178,10 +174,11 @@ tribble(
 
 
 
-
 ## Methodology
 
-Following the relevant literature [@christie1995; and @chang2000], we compute dispersion of the $i^{th}$ ETF from the market return. This is known as the Cross Sectional Absolute Deviation  ($CSAD_t$) measure. Empirically the $CSAD_t$ is defined in the following manner:
+It is well established that herding literature is vast with contradictory results depending mainly on the market, the employed methodology and the period under consideration [@spyrou2013]. Herding behavior can be either spurious in cases when investors make similar decisions as a result of processing the same information set and intentional herding when investors imitate the actions of others [see inter alia @bikhchandani2000; @galariotis2015]. Empirical studies on herding usually fall into two categories: namely those that employ holdings data aiming at measuring institutional investor herding [e.g. @lakonishok1992], and studies that use market returns data and investigate herding towards the market consensus [e.g. @chang2000; @galariotis2015]. Our paper falls within the latter category and tests for herding towards the market consensus for clean energy US ETFs.
+
+Following the relevant literature [@christie1995; and @chang2000], we compute dispersion of the $i^{th}$ ETF from the market return, which is known as the Cross Sectional Absolute Deviation  ($CSAD_t$) measure. Empirically the $CSAD_t$ is defined in the following manner:
 
 $$
 CSAD_t = \dfrac{1}{N}\sum_{i=1}^{N} |R_{i,t} - R_{m,t}|,
@@ -198,7 +195,7 @@ $$ {#eq-herding}
 where $\gamma_0$ is the intercept, $\gamma_1$ is the coefficient of the linear term, $\gamma_2$ is the coefficient of the quadratic term or the herding behaviour term, and $\epsilon_t$ is the error term. The coefficient $\gamma_2 <0$ when herding is present, and $\gamma_2 >0$  when anti-herding is present. To ensure the robustness of the estimate, we estimate $CSAD_{t}$ with Newey-West standard errors [See @newey1987].
 
 
-Based on the above and in order to provide additional insight on the herding phenomenon we examine whether herding presents an asymmetric response on days when the market is up vis-à-vis days when the market is down. To this end, we augment @eq-herding as follows:
+To provide additional insight on the herding phenomenon we examine whether herding presents an asymmetric response on days when the market is up vis-à-vis days when the market is down. To this end, we augment @eq-herding as follows:
 
 $$
 CSAD_t = \gamma_0 + \gamma_1(1-D) R_{m,t} + \gamma_2D R_{m,t} + \gamma_3(1-D) R_{m,t}^2  + \gamma_4D R_{m,t}^2 + \epsilon_t,
@@ -211,9 +208,9 @@ where $D$ is a dummy variable that takes the value of 1 when the market return i
 # Results
 
 ## Herding behaviour
-Rational asset pricing models [for example, @black1972] predict a linear relationship between return dispersion and market returns under normal conditions, a relationship that is no longer valid in the presence of herding. Herding behaviour leads to an increasing or decreasing cross sectional dispersion with respect to market returns. In other words, herding is captured by a non-linear term in the standard pricing equation indicating a decreasing or an increasing returns’ dispersion. 
+Rational asset pricing models [for example, @black1972] predict a linear relationship between return dispersion and market returns under normal conditions, a relationship that is no longer valid in the presence of herding.  Herding behaviour leads to an increasing or decreasing cross sectional dispersion with respect to market returns. In other words, herding is captured by a non-linear term in the standard pricing equation indicating a decreasing or an increasing returns’ dispersion. Stated differently, as @chang2000 argue, in the case of herding the coefficient on the non-linear term ($\gamma_2$) will be negative and statistically significant. 
 
-Stated differently, as @chang2000 argue, in the case of herding the coefficient on the non-linear term ($\gamma_2$) will be negative and statistically significant. @tbl-herding presents the results of herding for the full sample employing the non-linear @eq-herding. The estimated coefficient on market return is positive and highly significant as expected. The estimated coefficient on the non-linear term is negative (-1.2773) and statistically significant with a t-statistic of -9.71 suggesting that herd behaviour is present and robust in the US alternative energy ETFs.
+@tbl-herding presents the results of herding for the full sample, based on @eq-herding. The estimated coefficient on market return is positive and highly significant as expected. Importantly, the estimated coefficient on the non-linear term is negative (-1.2773) and statistically significant with a t-statistic of -9.71 suggesting that herd behaviour is present and robust in the US alternative energy ETFs. Accordingly, investors in US clean energy ETFs tend to disregard their private information and follow market consensus.
 
 
 ```{r}
@@ -245,7 +242,8 @@ tribble(
 
 ```
 
-There is ample evidence in the relevant literature that herding behaviour in various asset markets [see @pochea2017] exhibits asymmetry and time-varying characteristics. To this end, we proceed to estimate @eq-herding using the quantile regression (QR) proposed by @koenker1978. @tbl-quantile_herding presents the results of estimating @eq-herding across various quantiles of the returns dispersion. Our focus is on the herding coefficient $\gamma_2$, as a significant negative value of $\gamma_2$ is indicative of herding. Such a finding is observed at two quantiles namely 25% and 50% with a value of -1.1056 and -1.165 which are highly significant. It is worth mentioning that the sign of the herding coefficient remains negative for almost all quantiles while the significance changes from significant to insignificant while we move from low and middle to upper quantiles (75\% and 90\%).
+Evidence from the existing literature shows that herding behaviour in various asset markets [see @pochea2017] exhibits asymmetry. To this end, we proceed first  with the estimation of @eq-herding using the quantile regression (QR) proposed by @koenker1978. @tbl-quantile_herding presents the estimated results across various quantiles of the returns dispersion. They show that herding is statistically significant  at lower ($\tau= 25\%$), middle ($\tau =50\%$), and upper ($\tau=75\%$) with a value of -1.1056, -1.165, and -1.1473, respectively. No significant herding is found at extreme lower quantile ($\tau=10\%$) and extreme higher quantile ($\tau=90\%$).
+
 
 
 ```{r}
@@ -292,9 +290,8 @@ tribble(
 
 ## Herding behaviour during extreme market periods
 
-It is widely accepted that asset returns are characterized by asymmetry, that is, return dispersion tend to behave differently in rising and falling markets [see @geert2000; @zhou2013; @longin2001]. It should be noted, that examining the relationship between returns dispersion and market-wide returns across various quantiles of the returns distribution allows us to make more robust inference regarding the true behaviour of the phenomenon. @tbl-asymmetry_herding reports the estimation results of herding in the up and down markets based on @eq-asymmetry. In general, we find that herding is more likely to occur in down markets than in up markets, which is indicative of the asymmetry of herding behaviour.
+Then, we study herding in up and down markets. It is widely accepted that asset returns are characterized by asymmetry, that is, return dispersion tend to behave differently in rising and falling markets [see @geert2000; @zhou2013; @longin2001],  with evidence suggesting that herding is more pronounced during periods of market stress. In this regard, examining the relationship between returns dispersion and market-wide returns across various quantiles of the returns distribution of clean energy ETFs allows us to make more robust inference regarding the true behaviour of the herding phenomenon. @tbl-asymmetry_herding reports the estimation results of herding in the up and down markets based on @eq-asymmetry. In general, we find that herding is significant in both down and up markets
 
-\newpage
 
 ```{r}
 #| label: tbl-asymmetry_herding
@@ -330,7 +327,7 @@ tribble(
   mk_par(i = 1, j = c(2, 3, 4, 5, 6), part = "header", value = as_paragraph(as_equation(headings))) %>% 
   mk_par(j = 1, part = "body", value = as_paragraph(as_equation(quantiles))) %>%
   add_footer_row(
-    values = as_paragraph("Note: This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation (3). *,**,***denotes significance at 10%,5% and 1% respectively."
+    values = as_paragraph("Note: This table presents the estimation results of herding of US Alternative energy equity ETFs according to Equation (3). ", as_equation("\\gamma_3"), " captures potential herding in the up market, whereas ", as_equation("\\gamma_4"), " captures potential herding in the down market. *,**,***denotes significance at 10%,5% and 1% respectively."
     ),
     colwidths = 6
   ) %>%
@@ -339,12 +336,12 @@ tribble(
 
 ```
 
-Herding is present at all quantiles when markets are rising with an estimated coefficient $\gamma_3$ of -1.3669 and -1.2383 and highly significant respectively. However, when markets are declining, investors seem to neglect their own information set and imitate the actions of others resulting in a highly significant coefficient of herding ($\gamma_4$) across four out of five quantiles. Furthermore, we find that in high quantiles (75\% and 90\%) and when markets are rising the coefficient of interest ($\gamma_3$) turns positive but insignificant.
-
+When the market is rising, herding is present at all quantiles with a statistically significant coefficient $\gamma_3$ ranging from -0.2522 ($\tau=10\%$) to -0.2942 ($\tau=90\%$) . Similarly, when markets are declining, investors neglect their own information set and imitate the actions of others resulting in a highly significant coefficient of herding ($\gamma_4$) across four out of five quantiles, ranging from -0.9721 to -1,3144. Notably, the coefficient of herding in down market is larger than in up market, reflecting an asymmetric herding behaviour. 
 
 ## Time-varying herding behaviour
 
-There is ample evidence that herding might vary in response to market conditions [see @babalos2015; @klein2013; @stavroyiannis2019]. In order to gain further insight on the time varying nature of herding we conducted a rolling window analysis. The size of the rolling window is related to the time-scales of the system (response times), and the aim of the research [@babalos2015]. There is no golden rule for the right size of the rolling window, there is a trade-off between having a long enough window to estimate the metrics, and short enough to have a sufficient number of windows in order to be able to derive a trend. In light of the above discussion we set off to conduct a rolling window analysis of 50 observations. @fig-rolling_window plots the time evolution of the value of the estimated significance of the herding coefficient ($\gamma_2$) using the rolling window analysis.
+There is ample evidence that herding varies with time  [see @babalos2015; @klein2013; @stavroyiannis2019] and intensifies during crisis periods. In order to gain insights on the time-varying nature of herding in clean energy ETFs, we conduct a rolling window analysis. The size of the rolling window is related to the time-scales of the system (response times), and the aim of the research [@babalos2015]. There is no golden rule for the right size of the rolling window, there is a trade-off between having a long enough window to estimate the metrics, and short enough to have a sufficient number of windows in order to be able to derive a trend. Accordingly, we conduct a rolling window analysis of 50 observations, and plot in @fig-rolling_window the time evolution of the value of the estimated significance of the herding coefficient ($\gamma_2$). 
+
 
 ```{r}
 #| label: fig-rolling_window
@@ -404,22 +401,26 @@ herding_gg / tstat_gg
 
 ```
 
+\newpage
+We observe several periods of herding behaviour as reflected in the troughs in @fig-rolling_window. The most prominent cases of herding occur between March and May of 2020 followed by several instances of herding in the period that extends from March through April of 2017 and the period of February-March of 2023. On the other side, we derive significant moments of anti-herding behaviour in the clean energy ETFs by observing the peaks in @fig-rolling_window. Cross sectional dispersion appears to increase with respect to market-wide returns, which is a sign of anti-herding behaviour on behalf of investors around December of 2016 and later during September of 2022
 
-We observe several periods of herding behaviour as reflected in the troughs in @fig-rolling_window. The most prominent cases of herding occur between March and May of 2020 followed by several instances of herding in the period that extends from March through April of 2017 (when $\gamma_2$ averaged -45.5) and the period of February-March of 2023 (when $\gamma_2$ averaged -7.68).We observe significant herding in the onset of the COVID-19 crisis 2020, which was short lived as market adapted. The rest of the Covid period was in the main characterised by anti-herding behaviour. @ghorbel2023 and @dhall2020 found similar results. Lastly, similar to @mohamad2024 we observe no herding behaviour related to the Russia-Ukraine war. @mohamad2024 highlights the importance of context in understanding the link between herding and market events. On the other side, we derive significant moments of anti-herding behaviour in the clean energy ETFs by observing the spikes in @fig-rolling_window. Cross sectional dispersion appears to increase with respect to market-wide returns which is a sign of anti-herding behaviour on behalf of investors around December of 2016 and later during September of 2022.
 
-## Climate-related uncertainty and herding behaviour
+## Climate risks and herding behaviour
 
-The behaviour of participants in energy markets is closely related to the developments in the field of climate risks, carbon emissions  and environmentally friendly policies. In particular, following the implementation of the Paris agreement in November 2016, climate policy uncertainty has become in the epicenter of interest across carbon and energy markets. There are a few studies that attempt to quantify the effects of uncertainty related to climate on the economy and financial markets [see inter alia, @gabriel2024; @bolton2021; @krueger2020]. To this end, @bua2024 developed two climate risk related indexes namely transition and physical risk using a text-based approach in order to study the effect of these risks in financial markets.  It is expected that investors would prefer to hold assets that perform well in the face of increasing climate change risks, even if this entails accepting lower returns for such climate-hedging assets. Therefore, in the context of our study and following previous studies that study the determinants of herding behaviour [see @bouri2019; @demirer2018], we attempt to study the effect of climate-related uncertainty on the formation of herding behavior in the clean energy market. 
+The behaviour of participants in energy markets is closely related to the developments in the field of climate risks, carbon emissions, and environmentally friendly policies. Rising climate risk is found to increase green energy prices [@dutta2023], and evidence from the existing literature shows that climate policy uncertainty affects the performance of clean energy stocks relative to dirty ones, making the former outperform the later when the levels of climate policy uncertainty are high [@bouri2022]. In particular, following the implementation of the Paris agreement in November 2016, climate policy uncertainty has become in the epicenter of interest across carbon and energy markets. There are a few studies that attempt to quantify the effects of uncertainty related to climate on the economy or financial markets [see inter alia, @gabriel2024; @bolton2021; @krueger2020]. Interestingly, @bua2024 developed two climate risk related indexes namely transition and physical risk using a text-based approach in order to study the effect of these risks in financial markets. In this regard, @bouri2023 study the impact of both physical and climate risks on the returns and volatility of brown and green energy stocks, carbon emission allowances, and green bonds, showing evidence that transitional climate risk exerts a more significant impact than physical climate risk. 
 
-We use a probit model to relate herding to the two climate risk indexes developed by @bua2024 in the following manner:
+It is expected that environmentally conscious investors would prefer to hold clean energy assets that perform well in the face of increasing climate change risks [see @bouri2022], even if this entails accepting lower returns for such climate-hedging assets. Therefore, in the context of our study and following previous studies on the determinants of herding behaviour [see @bouri2019; @demirer2018], we examine the effect of physical and transition climate risks on the formation of herding behavior in the clean energy ETF market.
+
+To this end, we use a probit model to relate herding to the two climate risk indexes developed by @bua2024 in the following manner:
+
 
 $$
 Pr(D^{herd} = 1 |\lambda_0 +  \lambda_1TRI  + \lambda_2PRI) = \lambda_0 +  \lambda_1TRI  + \lambda_2PRI,
 $$ {#eq-climate}
 
-where $D^{herd}$ takes a value of 1 during periods of statistically significant herding (i.e., for days when the rolling t-statistic on $\gamma_2 < −1.96$ in @fig-rolling_window) and zero otherwise. $TRI$ is the transitional risk index and $PRI$ is the physical risk index. 
+where $D^{herd}$ takes a value of 1 during periods of statistically significant herding (i.e., for days when the rolling t-statistic on $\gamma_2 < −1.96$ in @fig-rolling_window) and zero otherwise. $TRI$ is the transitional risk index and $PRI$ is the physical risk index. For details on the construction of $TRI$ and $PRI$, the reader can refer to the paper of @bua2024.
 
-The results from the Probit model are reported in @tbl-probit_analysis, where only the physical risk index significantly decreases the probability of herding.^[It should be noted that due to availability issues the probit analysis ends in December of 2023.] In other words, climate risks is good news for clean energy stocks or firms resulting in anti-herding behaviour. This implies that in the presence of higher physical risk with respect to the climate, clean energy ETFs become a more attractive investment option for investors that allocate their money to the various alternative energy investment products. As a result, the cross-sectional dispersion of clean energy ETFs tends to increase. Our results are in line with those of relevant studies such as @gabriel2024 who claimed that in the event of climate policy shocks, clean energy assets could serve the role of hedging instruments.
+The results from the Probit model are reported in @tbl-probit_analysis. Showing that only the transitional climate risk index significantly decreases the probability of herding in clean energy ETFs.^[It should be noted that due to the availability of climate risk data from @bua2024, the probit analysis covers the period from May 1, 2016 to December 30, 2023.] Transitional climate risk represent good news for investors in clean energy stocks, possibly reducing their self-reinforcing nature of confidence in the tyranny of the majority [@teraji2003]) and their need for shared intention and action, resulting in a decrease in the herding behaviour. In the presence of higher transitional risk with respect to the climate, clean energy ETFs become a more attractive investment alternative for environmentally conscious investors who allocate their money to alternative energy investment products [see @bouri2022], reinforcing the confidence of investors in their own information. As a result, the cross-sectional dispersion of clean energy ETFs tends to increase. Our results are somewhat in line with @bouri2023 who show that the transitional climate risk is more important than physical risk for the return and volatility of clean energy stocks. They also concord with other relevant studies which indicate that in the event of climate policy shocks, clean energy assets could serve the role of hedging instruments [@gabriel2024] and tend to outperform brown energy assets [@bouri2022]. 
 
 ```{r}
 #| label: tbl-probit_analysis
@@ -456,7 +457,7 @@ tribble(
 
 ```
 
-Furthermore, we develop two additional models to study the effect of climate risks on herding behaviour. We split the sample into two groups based on the median value of the TRI and PRI. We then estimate the following two models:
+Furthermore, we develop two additional models to study the effect of high and low levels of climate risks on herding behaviour in clean energy ETFs. Accordingly, we split the sample into two groups based on the median value of the $TRI$ and $PRI$ and estimate the following two models:
 
 $$
 Pr(D^{herd} = 1 |\lambda_0 +\lambda_1D^{TRI}_{high}TRI + \lambda_2D^{PRI}_{high}PRI) = \lambda_0 +\lambda_1D^{TRI}_{high}TRI + \lambda_2D^{PRI}_{high}PRI, and
@@ -467,7 +468,7 @@ $$
 Pr(D^{herd} = 1 |\lambda_0 +\lambda_1D^{TRI}_{low}TRI + \lambda_2D^{PRI}_{low}PRI) = \lambda_0 +\lambda_1D^{TRI}_{low}TRI + \lambda_2D^{PRI}_{low}PRI, 
 $$ {#eq-climate_low}
 
-where $D^{herd}$ is the same as in @eq-climate. $D^{TRI}_{high}$ and $D^{PRI}_{high}$ are dummy variables that take a value of 1 if the value of the TRI and PRI are above the median and zero otherwise. Similarly, $D^{TRI}_{low}$ and $D^{PRI}_{low}$ are dummy variables that take a value of 1 if the value of the TRI and PRI are below the median and zero otherwise. 
+where $D^{herd}$ is the same as in @eq-climate. $D^{TRI}_{high}$ and $D^{PRI}_{high}$ are dummy variables that take a value of 1 if the values of the $TRI$ and $PRI$ are above the median and zero otherwise. Similarly, $D^{TRI}_{low}$ and $D^{PRI}_{low}$ are dummy variables that take a value of 1 if the values of the $TRI$ and $PRI$ are below the median and zero otherwise. 
 
 ```{r}
 #| label: tbl-probit_analysis2
@@ -498,12 +499,14 @@ tribble(
 ```
 
 
-We use these high PRI and high TRI in one probit regression and low TRI and low PRI in another. Results are presented in @tbl-probit_analysis2. We observe higher uncertainty that stems from physical or transition risk causes anti-herding which is in line with the logic we discussed earlier.
+Using these high $PRI$ and high $TRI$ in one probit regression and low $TRI$ and low $PRI$ in another one, we present the results in @tbl-probit_analysis2. We observe that high levels of transition risk decrease the likelihood of herding (i.e. drives anti-herding) at the 10% level of significance, which is in line with the logic we discussed earlier.
 
 
 # Conclusion
 
-This study offers novel and valuable insights into herding behaviour in clean energy ETFs. We used various herding behaviour tests to achieve this. First, the baseline herding tests revealed significant evidence of herding behaviour. Second, the asymmetric herding tests showed that herding behaviour was present in both bear and bull markets. Lastly, the results of the time-varying tests point to significant periodic herding. However, the results further indicate that herding in US clean energy ETFs was not mainly related to climate-related risks or uncertainty. The probit analysis showed that climate-related uncertainty reduced the probability of herding or led to investor anti-herding behaviour. We differ to the literature on the factors that drive herding in these ETFs [for example, @loang2023;  @koutmos2024; @przychodzen2016]. Our results, similar to @bua2024, indicate that investors did not herd on climate-related uncertainty, and sought returns whilst hedging against climate-related risk. This is a positive for the financial stability of these growing alternative investment indices. 
+This study offers novel and valuable insights into herding behaviour in US clean energy ETFs. We used various herding behaviour tests to achieve this. First, herding is found to be significant, and exists in both bearish and bullish markets, but shows an asymmetry in that it is more pronounced in the bearish market.  Herding is also found to time-varying. Second, the transition climate risk, particularly its high levels,  reduce the probability of herding behaviour, whereas physical climate risk plays no significant role irrespective of its (high or low) levels. This evidence that climate risks do not lead to higher herding behaviour in the clean energy ETFs, is new to the related literature.
+
+Our findings offer an interesting outlook on the role of transitional climate risk for the formation of herding in clean energy ETFs, which is a puzzle in the related literature. Given that herding represents a behavioural pattern that can challenge market efficiency and exacerbate price fluctuations, both policymakers and investors should benefit  from our findings for the sake of investment decision and market efficiency under the transition towards cleaner production and decarbonized portfolio investments. Future studies could examine whether herding in clean energy ETFs is linked to excess volatility in the overall US stock market. 
 
 
 \newpage 
@@ -530,7 +533,7 @@ This study offers novel and valuable insights into herding behaviour in clean en
 
 ```{r}
 #| label: tbl-data
-#| tbl-cap: "List of green ETFs used in the study"
+#| tbl-cap: "List of clean energy ETFs used in the study"
 #| cache: false
 
 tribble(
