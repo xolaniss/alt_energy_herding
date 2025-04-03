@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.3.30)  30 MAR 2025 15:18
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025)  (format=lualatex 2025.3.30)  31 MAR 2025 15:59
  restricted system commands enabled.
  file:line:error style messages enabled.
 **alt_energy_herding_full.tex
@@ -828,7 +828,7 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 196.
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 202.
- (/Users/xolanisibande-dev/Papers/alt_energy_herding/Latex_version/.texpadtmp/alt_energy_herding_full.aux)
+ (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.aux)
 \openout1 = alt_energy_herding_full.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
@@ -2501,7 +2501,7 @@ Overfull \hbox (28.15378pt too wide) in alignment at lines 1045--1066
 
 [13]
 
-[14] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Latex_version/.texpadtmp/alt_energy_herding_full.bbl
+[14] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.bbl
 
 [15]
 
@@ -2779,7 +2779,7 @@ Package fontspec Info:
 warning  (pdf backend): ignoring duplicate destination with the name 'table.1'
 
 
-[19] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Latex_version/.texpadtmp/alt_energy_herding_full.aux)
+[19] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2793,10 +2793,10 @@ Here is how much of LuaTeX's memory you used:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 12 glue, 4 kern, 1 penalty, 1 margin_kern, 3 glyph, 33 attribute, 77 glue_spec, 33 attribute_list, 1 write, 1 user_defined, 4 pdf_action nodes
    avail lists: 1:1,2:1378,3:281,4:542,5:408,6:104,7:6961,8:90,9:1093,10:26,11:593,12:1
  52366 multiletter control sequences out of 65536+600000
- 133 fonts using 39826023 bytes
+ 133 fonts using 39826471 bytes
  108i,13n,122p,10917b,1114s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></System/Library/Fonts/Supplemental/Arial.ttf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf>
-Output written on alt_energy_herding_full.pdf (19 pages, 217794 bytes).
+Output written on alt_energy_herding_full.pdf (19 pages, 217841 bytes).
 
 PDF statistics: 501 PDF objects out of 1000 (max. 8388607)
  433 compressed objects within 5 object streams
