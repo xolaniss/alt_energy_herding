@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.30)  26 JUN 2025 19:15
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.30)  26 JUN 2025 19:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**alt_energy_herding_full.tex
-(./alt_energy_herding_full.tex
+**alt_energy_herding_no_authors.tex
+(./alt_energy_herding_no_authors.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -786,8 +786,8 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 205.
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 210.
- (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.aux)
-\openout1 = `alt_energy_herding_full.aux'.
+ (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_no_authors.aux)
+\openout1 = `alt_energy_herding_no_authors.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
 LaTeX Font Info:    ... okay on input line 210.
@@ -1110,24 +1110,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00082pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 224.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 224.
 
 
 [1
@@ -1150,6 +1132,24 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.66417pt on input line 261.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.47441pt on input line 261.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 9.00082pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00055pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.99904pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 263.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 263.
 
 
 [2]
@@ -2488,7 +2488,7 @@ Overfull \hbox (28.15378pt too wide) in alignment at lines 1132--1153
 
 [16]
 
-[17] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.bbl
+[17] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_no_authors.bbl
 
 [18]
 
@@ -2765,19 +2765,19 @@ Package fontspec Info:
 
 
 
-[23] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.aux)
+[23] (/Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_no_authors.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28716 strings out of 473832
- 600456 string characters out of 5729481
- 1268610 words of memory out of 5000000
- 51384 multiletter control sequences out of 15000+600000
- 621219 words of font info for 146 fonts, out of 8000000 for 9000
+ 28713 strings out of 473832
+ 600486 string characters out of 5729481
+ 1268634 words of memory out of 5000000
+ 51382 multiletter control sequences out of 15000+600000
+ 621211 words of font info for 145 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,13n,122p,10937b,1117s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,10n,122p,10943b,1117s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on /Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_full.pdf (23 pages).
+Output written on /Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_no_authors.pdf (23 pages).

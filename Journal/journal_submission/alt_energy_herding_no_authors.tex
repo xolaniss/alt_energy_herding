@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -7,22 +8,22 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
-
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-\usepackage{setspace}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -30,9 +31,7 @@
   \usepackage[]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{5}
+\usepackage{setspace}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -58,8 +57,7 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -71,17 +69,35 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+\usepackage[round]{natbib}
+\bibliographystyle{apalike}
+
 
 \usepackage{fontspec}
 \usepackage{multirow}
@@ -177,16 +193,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[round]{natbib}
-\bibliographystyle{apalike}
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   colorlinks=true,
   linkcolor={blue!100!black},
@@ -198,7 +207,6 @@
 
 \author{}
 \date{}
-
 \begin{document}
 
 \title{Do investors in clean energy ETFs herd? The role of climate risks}
@@ -264,12 +272,56 @@ amongst others]{giglio2021a}}. Investors, therefore, recognise these
 risks and seek to mitigate them, as they seek return-enhancing green
 financial products.
 
-Exchange-traded funds (ETFs) are a key feature of green financial
-products. They are a collection of investments that often tracks an
-underlying performance of an asset or index. In the universe of
-environment, social, and governance (ESG) investments, clean ETFs serve
-as a tool for environmentally conscious investors to identify and invest
-in environmentally friendly companies \citep{briere2023} engaged in the
+Energy market has been in the epicentre of retail investors and
+portfolio managers at least over the last two decades. Official
+estimates claim that global energy investment is expected to surpass USD
+3 trillion for the first time in 2024, with USD 2 trillion going to
+clean energy technologies and infrastructure \citep{iea2024}. There is a
+general consensus in the literature that the most important event that
+has shaped the current landscape in the energy sector is the emergence
+of the energy portfolio with the rise of green energy as an alternative
+energy resource and an asset class. Price volatility of fossil fuels on
+the one hand and decarbonisation-related goals dictated by international
+agreements on the other hand are heavily responsible for the growing
+interest in green energy market. Responding to the increasing awareness
+about the environment and the need for more green capital, financial
+markets have also attracted a large portion of retail and institutional
+investors' fund flows \citep{rizvi2022green, naqvi2021there}.
+
+Needless to mention that the rise of energy popularity as an alternative
+investment class has also been fueled by the fictionalization of
+commodities markets. Commodities have become an effective investment
+tool for investment community as it allows investors to participate in
+the market developments across various physical products such as
+agricultural products, silver, gold, natural gas, oil etc and more
+recently clean energy products without being obliged to own the product
+directly \citep{gagnon2020they}. Several academic studies have
+highlighted substantial diversification benefits of commodities when
+added to a portfolio of stocks and bonds \citep[see inter
+alia,][]{naqvi2022}.
+
+Green energy sectors like solar, wind, geothermal, biofuels, biomass,
+wave, hydro and tidal energies are considered by investors, authorities
+and policy-makers as the substitutes for fossil-fuels energy that
+increase \(CO_2\) emissions \citep{shahzad2020clean}. Moreover, as
+\citet{naqvi2022} point out that ``the alternative energy sector is
+expected to grow faster over the next decades due to the depletion of
+fossil fuel reserves and the technological advance that has made green
+energy feasible''.
+
+Although green energy investment has witnessed an exponential growth
+over the years, there is a lot of improvement that can be done in terms
+of investors' participation, both retail and institutional. To achieve
+the goal of larger capital commitment to green energy projects it is
+important to gain investors' confidence in financial products that are
+linked to green energy such as Exchange-traded funds(ETFs).
+
+ETFs are a key feature of green financial products. They are a
+collection of investments that often tracks an underlying performance of
+an asset or index. In the universe of environment, social, and
+governance (ESG) investments, clean ETFs serve as a tool for
+environmentally conscious investors to identify and invest in
+environmentally friendly companies \citep{briere2023} engaged in the
 transition towards a cleaner production and a low-carbon economy. Among
 the ESG ETFs, the Clean Energy (CE) ETFs have been the best-performing
 one in 2022 \citep{decclesia2024}. This is not surprising given that the
@@ -381,7 +433,7 @@ ETF, yielding, a total of 2122 observations per ETF.
 
 \centering{
 
-\includegraphics{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}}
 
 }
 
@@ -469,11 +521,34 @@ and investigate herding towards the market consensus
 latter category and tests for herding towards the market consensus for
 clean energy US ETFs.
 
-Following the relevant literature
-\citetext{\citealp{christie1995}; \citealp[and][]{chang2000}}, we
-compute dispersion of the \(i^{th}\) ETF from the market return, which
-is known as the Cross Sectional Absolute Deviation (\(CSAD_t\)) measure.
-Empirically the \(CSAD_t\) is defined in the following manner:
+More broadly, studies that focus on herding can be broadly classified
+into two main categories: on the one hand there are studies that examine
+institutional investor herding and analyst herding using
+transaction-level data
+\citetext{\citealp{lakonishok1992}; \citealp[and][among
+others]{sias2004institutional}}. On the other hand, there are studies
+that explore herding towards the market consensus employing individual
+returns and market returns
+\citetext{\citealp{christie1995}; \citealp[and][]{chang2000}}. In the
+latter case, the most widely employed method is the cross-sectional
+standard deviation of returns proposed by \citet{christie1995}. The
+intuition behind this approach is that herding toward the market is
+signaled when return dispersion is relatively low. Rational asset
+pricing theory predicts that when stocks respond to market movements in
+various degrees then dispersion will be linearly related to market
+returns \citep[see also,][]{hwang2004market}. However, when investors
+tend to mimic each other and herd towards the market the linear relation
+between returns dispersion and aggregate market returns is no longer
+valid. Under these conditions, fitting a non-linear regression
+specification between a measure of returns dispersion and aggregate
+market return appears as a more viable choice. Therefore, our approach
+to measure herding activity is based on the non-linear regression model
+by \citet{chang2000}.
+
+Following this relevant literature, we compute dispersion of the
+\(i^{th}\) ETF from the market return, which is known as the Cross
+Sectional Absolute Deviation (\(CSAD_t\)) measure. Empirically the
+\(CSAD_t\) is defined in the following manner:
 
 \begin{equation}\phantomsection\label{eq-csad}{
 CSAD_t = \dfrac{1}{N}\sum_{i=1}^{N} |R_{i,t} - R_{m,t}|,
@@ -705,6 +780,8 @@ herding in the up and down markets based on Equation~\ref{eq-asymmetry}.
 In general, we find that herding is significant in both down and up
 markets
 
+\newpage
+
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
 \global\setlength{\Oldtabcolsep}{\tabcolsep}
@@ -813,7 +890,7 @@ estimated significance of the herding coefficient (\(\gamma_2\)).
 
 \centering{
 
-\includegraphics{alt_energy_herding_files/figure-pdf/fig-rolling_window-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{alt_energy_herding_files/figure-pdf/fig-rolling_window-1.pdf}}
 
 }
 
@@ -868,6 +945,16 @@ the context of our study and following previous studies on the
 determinants of herding behaviour \citep[see][]{bouri2019, demirer2018},
 we examine the effect of physical and transition climate risks on the
 formation of herding behavior in the clean energy ETF market.
+
+Furthermore, higher transition risk means greater uncertainty for future
+pathway towards a cleaner economy. Under these conditions, green assets
+such as green stocks or ETFs are expected to perform better and can
+serve as hedging tools \citep[see inter alia][]{pastor}. As a result,
+investors allocate their capital to available green assets thus
+resulting in higher returns' dispersion with respect to the aggregate
+market. Stated differently, investors move their capital away from
+market consensus across green ETFs ruling out the possibility of herding
+behavior.
 
 To this end, we use a probit model to relate herding to the two climate
 risk indexes developed by \citet{bua2024} in the following manner:
