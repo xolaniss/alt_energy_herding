@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: /Users/xolanisibande-dev/Papers/alt_energy_herding/Journal/journal_submission/.texpadtmp/alt_energy_herding_no_author.aux
+The style file: apalike.bst
+Database file #1: ../references.bib
+Warning--empty journal in ciciretti2021
+Warning--empty journal in pastor
+You've used 53 entries,
+            1935 wiz_defined-function locations,
+            795 strings with 12840 characters,
+and the built_in function-call counts, 21332 in all, are:
+= -- 2114
+> -- 850
+< -- 28
++ -- 290
+- -- 280
+* -- 1889
+:= -- 3721
+add.period$ -- 157
+call.type$ -- 53
+change.case$ -- 406
+chr.to.int$ -- 53
+cite$ -- 55
+duplicate$ -- 759
+empty$ -- 1491
+format.name$ -- 363
+if$ -- 4113
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 52
+newline$ -- 266
+num.names$ -- 159
+pop$ -- 297
+preamble$ -- 1
+purify$ -- 405
+quote$ -- 0
+skip$ -- 582
+stack$ -- 0
+substring$ -- 1675
+swap$ -- 74
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 318
+warning$ -- 2
+while$ -- 191
+width$ -- 0
+write$ -- 683
+(There were 2 warnings)
