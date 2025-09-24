@@ -95,7 +95,6 @@ source(here("Functions","modelsummary_word.R" ))
 source(here("Functions","modelplot_word.R" ))
 source(here("Functions","borderlines.R" ))
 source(here("Functions","fx_plot.R" ))
-
 ```
 
 
