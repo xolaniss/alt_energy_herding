@@ -1,5 +1,4 @@
 % Options for packages loaded elsewhere
-% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -8,22 +7,22 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
-\usepackage{xcolor}
+
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{5}
+\usepackage{setspace}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -31,33 +30,22 @@
   \usepackage[]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{setspace}
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
-\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}{
-    \@ifstar
-      \xxxParagraphStar
-      \xxxParagraphNoStar
-  }
-  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
-  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}{
-    \@ifstar
-      \xxxSubParagraphStar
-      \xxxSubParagraphNoStar
-  }
-  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
-  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
-\makeatother
 
 
-\usepackage{longtable,booktabs,array}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -69,35 +57,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\newsavebox\pandoc@box
-\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
-  \sbox\pandoc@box{#1}%
-  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
-  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
-  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
-  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
-  \else\usebox{\pandoc@box}%
-  \fi%
-}
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 % Set default figure placement to htbp
+\makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
-
-
-
-
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-
-
- 
-\usepackage[round]{natbib}
-\bibliographystyle{apalike}
-
 
 \usepackage{fontspec}
 \usepackage{multirow}
@@ -193,9 +163,15 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[round]{natbib}
+\bibliographystyle{apalike}
 \usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   colorlinks=true,
   linkcolor={blue!100!black},
@@ -204,9 +180,9 @@
   urlcolor={blue!100!black},
   pdfcreator={LaTeX via pandoc}}
 
-
 \author{}
 \date{}
+
 \begin{document}
 
 \title{Do investors in clean energy ETFs herd? The role of climate risks}
@@ -243,7 +219,6 @@ Rangan Gupta\footnote{Department of Economics, University of Pretoria, Pretoria,
 \textbf{JEL Codes}: G14, Q54, P18
 \newpage
 
-
 \setstretch{1.5}
 \section{Introduction}\label{introduction}
 
@@ -253,10 +228,11 @@ driven by the increasing materialisation of climate risks, and the
 actions of governments, institutions and organizations towards a
 sustainable future \citep{giglio2021a}. To safeguard returns, investors
 increasingly seek to hedge against climate risks by investing in green
-financial products. Although the evidence from the existing literature
-is mixed, returns from green financial products are somewhat comparable
-to traditional financial products \citetext{\citealp[see amongst
-others,][]{decclesia2024}; \citealp{nguyen2025}; \citealp{pastor2022}; \citealp[and][]{naqvi2022}}.
+financial products \citep{nguyen2025}. Although the evidence from the
+existing literature is mixed, returns from green financial products are
+somewhat comparable to traditional financial products
+\citetext{\citealp[see amongst
+others,][]{decclesia2024}; \citealp{pastor2022}; \citealp[and][]{naqvi2022}}.
 In this new climate sustainability paradigm, investors face many
 pressures that not only bear on returns but also the stability of
 financial markets. For example, resulting regulations aimed at reducing
@@ -351,12 +327,12 @@ whether climate-related uncertainty can affect the herding behaviour in
 the US clean energy ETFs market. Methodologically, we follow the
 standard herding tests by \citet{christie1995} and \citet{chang2000}.
 Notably, we supplement the traditional approach with quantile
-regressions \citep{koenker1978} in order to capture how herding differs
-across various quantiles of the returns dispersion and in up and down
-markets. Lastly, to establish a link between climate risk and herding
-behaviour, we differentiating between transitional and physical risks
-\citep{bua2024} and provide valuable insights on their potential impact
-on the likelihood of herding in clean energy ETFs.
+regressions \citep[ ]{koenker1978} in order to capture how herding
+differs across various quantiles of the returns dispersion and in up and
+down markets. Lastly, to establish a link between climate risk and
+herding behaviour, we differentiating between transitional and physical
+risks \citep{bua2024} and provide valuable insights on their potential
+impact on the likelihood of herding in clean energy ETFs.
 
 In this study specifically, we ask whether the rapid adoption of clean
 energy ETFs could be driven by market fads, or is a fundamental change
@@ -379,6 +355,18 @@ whether their contribution to the world transition to cleaner production
 should be financially lucrative. On a related front, the
 self-reinforcing nature of confidence in the tyranny of the majority, as
 indicated by \citet{teraji2003} could also be pertinent.
+
+We adopt the popular definition herding behaviour, which follows from
+the broader behaviour economics literature. In recent years behavioural
+economics showed that human nature is prone to, amongst others,
+emotional bias and heuristics
+\citep{aggarwal2014animal, kahneman2003maps}. These biases can lead to
+inefficient decision making, which can at times result in market
+failures \citep{devenow1996}. In this context, herding behaviour is
+imitative behivour or correlated trades by financial market agents that
+can result in market volatility and crises when the market is not well
+informed. This is why we are interested in herding behaviour in the
+clean energy market.
 
 While herding behaviour has been examined in ESG markets, it remains
 understudied in clean energy assets, notably, clean energy
@@ -440,7 +428,7 @@ ETF, yielding, a total of 2122 observations per ETF.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}}
+\includegraphics{alt_energy_herding_files/figure-pdf/fig-csad-1.pdf}
 
 }
 
@@ -565,8 +553,8 @@ where \(R_{i,t}\) is the return and \(R_{m,t}\) is the cross sectional
 average of returns for the sample of ETFs available for each day. The
 return dispersion measures the directional similarity of ETF returns to
 the market return. This return similarity forms the basis for the
-herding behaviour tests. Following \citet{galariotis2015} we estimate
-Equation~\ref{eq-herding}:
+herding behaviour tests. Next we estimate Equation~\ref{eq-herding} as
+follows:
 
 \begin{equation}\phantomsection\label{eq-herding}{
 CSAD_t = \gamma_0 + \gamma_1 |R_{m,t}| + \gamma_2 R_{m,t}^2 + \epsilon_t,
@@ -897,7 +885,7 @@ estimated significance of the herding coefficient (\(\gamma_2\)).
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{alt_energy_herding_files/figure-pdf/fig-rolling_window-1.pdf}}
+\includegraphics{alt_energy_herding_files/figure-pdf/fig-rolling_window-1.pdf}
 
 }
 
@@ -974,8 +962,15 @@ where \(D^{herd}\) takes a value of 1 during periods of statistically
 significant herding (i.e., for days when the rolling t-statistic on
 \(\gamma_2 < −1.96\) in Figure~\ref{fig-rolling_window}) and zero
 otherwise. \(TRI\) is the transitional risk index and \(PRI\) is the
-physical risk index. For details on the construction of \(TRI\) and
-\(PRI\), the reader can refer to the paper of \citet{bua2024}.
+physical risk index\footnote{These indexes were constructed using the
+  text-based approach of \citet{engle2020hedging}. This approach
+  compares authorative text on climate change with European news sourced
+  from Reuters - assuming that climate change events are covered in the
+  news. The final sample had 1 million news articles from January 2005
+  to October 2021. \citet{Bua2024} aggregate the articles to a daily
+  frequency, thereby creating daily measures of \(TRI\) and \(PRI\)}.
+For full details on the construction of \(TRI\) and \(PRI\), the reader
+can refer to the paper of \citet{bua2024}.
 
 The results from the Probit model are reported in
 Table~\ref{tbl-probit_analysis}. Showing that only the transitional
@@ -1447,7 +1442,6 @@ market.
 \global\setlength{\tabcolsep}{\Oldtabcolsep}
 
 \renewcommand*{\arraystretch}{1}
-
 
 
 
