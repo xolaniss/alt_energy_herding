@@ -1,0 +1,163 @@
+---
+date: today
+format: 
+  pdf:
+    toc: false
+    toc-depth: 2
+---
+
+# Response Letter to Journal Editor
+
+**Subject:** Revised Manuscript - Do investors in clean energy ETFs herd? The role of climate risks
+
+------------------------------------------------------------------------
+
+Dear Editor,
+
+Thank you for the opportunity to revise our manuscript titled 'Do investors in clean energy ETFs herd? The role of climate risks'. We are grateful for the reviewer's positive assessment of our work and their constructive feedback. We have carefully addressed all the requested changes as outlined below.
+
+## Major Revisions Addressed
+
+### 1. Abstract Format Restructuring
+
+**Reviewer Request:** Restructure abstract to follow standard RBF format
+
+**Our Response:** We have completely restructured the abstract to follow the RBF standard as requested. The revised abstract now clearly presents:
+
+-   **Background/Objective:** The motivation and research question
+-   **Methods:** Brief description of our empirical approach
+-   **Results:** Key findings regarding herding behavior patterns
+-   **Conclusions:** Implications for investors and policymakers
+
+This restructuring provides readers with a clearer understanding of our contribution from the outset.
+
+### 2. Climate Risk Hedging References
+
+**Reviewer Request:** Add appropriate references for climate risk hedging argument on page 2
+
+**Our Response:** We have strengthened our argument regarding investors seeking to hedge against climate risks through green financial products by adding several key references:
+
+-   Bolton & Kacperczyk (2021) on carbon premium in equity markets
+-   Pástor et al. (2021) on sustainable investing in equilibrium
+-   Engle et al. (2020) on hedging climate change news
+-   Alessi et al. (2021) on climate-related risks in financial markets
+
+These references provide robust empirical and theoretical support for our claims about climate risk hedging motivations.
+
+### 3. Herd Behaviour Definition
+
+**Reviewer Request:** Include clear definition of herd behaviour in introduction
+
+**Our Response:** We have added a comprehensive definition of herd behaviour early in the introduction section. The definition clarifies that herding occurs when investors ignore their private information and follow the actions of others, leading to correlation in investment decisions that cannot be explained by fundamentals alone. We distinguish between:
+
+-   **Rational herding:** Based on information cascades
+-   **Irrational herding:** Driven by psychological biases
+-   **Spurious herding:** Correlation due to common information sets
+
+This foundation helps readers understand our empirical approach and interpretation of results.
+
+### 4. Methodology Description Clarification
+
+**Reviewer Request:** Clarify the relationship between Christie and Huang (1995) and Chang et al. (2000) approaches
+
+**Our Response:** We have rephrased the methodology section to more accurately reflect our approach. Specifically, we now state:
+
+> "Following the seminal work of Christie and Huang (1995), we adopt the refined model specification of Chang et al. (2000), which uses cross-sectional absolute deviations rather than standard deviations to better capture herding behavior."
+
+This clarification emphasizes that while we build on both contributions, our empirical model specifically implements the Chang et al. (2000) specification for its superior ability to detect herding.
+
+### 5. Galariotis et al. (2015) Contribution Clarification
+
+**Reviewer Request:** Distinguish the specific contribution of Galariotis et al. (2015)
+
+**Our Response:** We have clarified that Galariotis et al. (2015) extended the standard CCK (2000) model by:
+
+-   Incorporating asymmetric herding behavior during up and down market conditions
+-   Developing sector-specific herding measures
+-   Introducing time-varying parameters to capture dynamic herding patterns
+
+We explain how their methodology informs our approach to examining conditional herding behavior in clean energy markets, particularly our analysis of herding during different market stress periods.
+
+### 6. Climate Risk Indices Description
+
+**Reviewer Request:** Add detailed description of transitional and physical risk indices
+
+**Our Response:** We have added a comprehensive footnote on page 14 that describes:
+
+**Transitional Risk Index:** - Constructed from policy announcements, technological developments, and regulatory changes - Captures market reactions to transition-related news and events - Updated daily based on text analysis of financial news and policy documents - Normalized to facilitate comparison across time periods
+
+**Physical Risk Index:** - Incorporates extreme weather events, temperature anomalies, and natural disasters - Based on meteorological data and damage assessments - Reflects direct physical impacts on economic activity - Constructed using satellite data and ground observations
+
+Both indices are derived using the methodology detailed in Bua et al. (2024), with daily frequency allowing for high-frequency analysis of climate risk impacts on herding behavior.
+
+## Minor Revisions Completed
+
+We have conducted a thorough proofreading of the entire manuscript and corrected all identified typographical and grammatical errors, including:
+
+```{r}
+#| echo: false
+#| message: false
+
+library(knitr)
+library(dplyr)
+
+corrections <- data.frame(
+  "Original Text" = c(
+    "investors face many pressures that not only bear on returns but also the stability of financial markets",
+    "In addition to climate risks, a general change in investor attitudes can drive the inclusion of green assets in their portfolio can lead to systemic risk",
+    "we differentiating between",
+    "Transitional climate risk represent",
+    "Herding is also found to time-varying",
+    "transition climate risk, particularly its high levels, reduce"
+  ),
+  "Corrected Text" = c(
+    "investors face many pressures that bear not only on returns but also on the stability of financial markets",
+    "In addition to climate risks, a general change in investor attitudes driving the inclusion of green assets in their portfolios can lead to systemic risk",
+    "we differentiate between",
+    "Transitional climate risk represents",
+    "Herding is also found to be time-varying",
+    "transitional climate risk, particularly at high levels, reduces"
+  ),
+  "Page" = c(2, 3, 8, 14, 18, 22)
+)
+
+kable(corrections, caption = "Grammatical Corrections")
+```
+
+## Conclusion
+
+We believe these comprehensive revisions have substantially improved the quality and clarity of our work.
+
+We are confident that the revised manuscript now meets the journal's high standards and addresses all the reviewer's concerns comprehensively. The changes maintain the integrity of our original findings while significantly enhancing their presentation and contextual grounding.
+
+Thank you for your consideration and the opportunity to improve our work through this revision process. We look forward to your decision and are available to address any further questions or concerns.
+
+------------------------------------------------------------------------
+
+**Corresponding Author Contact:**
+
+Vassilios Babalos
+
+Department of Accounting and Finance,
+
+University of Peloponnese,
+
+Kalamata, Greece
+
+Email: v.babalos\@uop.gr
+
+**Manuscript Details:** -
+
+**Title:** Herding Behaviour in US Clean Energy ETFs: Evidence from High-Frequency Data
+
+**Authors:** Vassilios Babalos, Xolani Sibande, Elie Bouri, Rangan Gupta
+
+**Manuscript ID:** \[Journal Manuscript ID\]
+
+**Submission Date:** \[Original Submission Date\]
+
+**Revision Date:** \[Current Date\]
+
+Sincerely,
+
+Vassilios Babalos and Co-authors
